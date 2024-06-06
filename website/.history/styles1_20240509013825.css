@@ -1,0 +1,78 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: white;
+}
+
+#wrapper {
+  width: 100%;
+  text-align: center;
+}
+
+header {
+  background-color: #eeeeee; /* light grey */
+  padding: 20px; /* adds padding inside the box */
+  border-radius: 5px; /* optional: rounds the corners of the box */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* optional: adds subtle shadow */
+  text-align: left; /* ensures text is aligned to the left */
+}
+
+#header-content {
+  width: 80%;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+main {
+  padding: 20px;
+}
+
+#decision-form {
+  background: #fff;
+  padding: 20px;
+  width: 50%;
+  margin: 20px auto;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+
+.option {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid #ccc;
+  margin-bottom: 10px;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.option:hover {
+  background-color: #f0f0f0;
+}
+
+.arrow {
+  font-weight: bold;
+}
+
+button {
+  padding: 10px 20px;
+  cursor: pointer;
+  border: none;
+  background: #007bff;
+  color: white;
+  border-radius: 5px;
+  margin-top: 10px;
+}
+
+button#back-button {
+  background: #6c757d;
+}
+
+button:disabled {
+  background: #eee;
+  color: #aaa;
+  cursor: default;
+}

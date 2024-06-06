@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Recommendation</title>
+    <link
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      .header-title {
+        margin-top: 20px;
+        margin-bottom: 20px;
+      }
+      .recommendation-section {
+        padding: 20px;
+        border-radius: 5px;
+        margin-bottom: 15px;
+      }
+      .high-probability {
+        background-color: #d4edda;
+        border: 1px solid #c3e6cb;
+      }
+      .caution {
+        background-color: #fff3cd;
+        border: 1px solid #ffeeba;
+      }
+      .low-probability {
+        background-color: #f8d7da;
+        border: 1px solid #f5c6cb;
+      }
+      .btn-container {
+        margin-top: 20px;
+      }
+      .collapse-content {
+        padding-top: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="header-title text-center">
+        <h2>Recommendation</h2>
+        <p>
+          Based on the options you selected, these are the recommendations for
+          the experimental context
+          <strong
+            >Amplitude comparison within a person and muscle, between
+            conditions/ tasks (within a session*)</strong
+          >. *Without removing electrodes.
+        </p>
+        <p>
+          Sourced from the paper
+          <a href="https://example.com">Besomi et al. 2020</a>.
+        </p>
+        <p>
+          It is suggested to use the most stringent method below. Expand a
+          method to learn more.
+        </p>
+      </div>
+
+      <div class="recommendation-section high-probability">
+        <h4>
+          <button
+            class="btn btn-link"
+            data-toggle="collapse"
+            data-target="#highProbability"
+            aria-expanded="true"
+            aria-controls="highProbability"
+          >
+            <i class="fa fa-check-circle" aria-hidden="true"></i> Yes: High
+            probability that this is appropriate
+          </button>
+        </h4>
+        <div id="highProbability" class="collapse show collapse-content">
+          <ul>
+            <li>
+              Normalization to the maximum voluntary contraction (MVC) in the
+              same task/context as the task of interest (with matched
+              contraction type*, muscle length/joint angle, and/or velocity)
+              *isometric; concentric; eccentric.
+            </li>
+            <li>
+              Normalization to a standardized isometric maximum voluntary
+              contraction (MVC) when it is not possible to match all aspects of
+              the task of interest (e.g., multiple tasks or muscles
+              investigated, complex task).
+            </li>
+            <li>
+              Normalization to the peak or mean EMG amplitude during the task
+              investigated.
+              <em
+                >For comparisons between conditions (e.g., pre-post intervention
+                in a single session) for a single task (e.g., running).</em
+              >
+            </li>
+            <li>Non-normalized EMG amplitude.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="recommendation-section caution">
+        <h4>
+          <button
+            class="btn btn-link"
+            data-toggle="collapse"
+            data-target="#caution"
+            aria-expanded="false"
+            aria-controls="caution"
+          >
+            <i class="fa fa-exclamation-triangle" aria-hidden="true"></i>
+            Caution: Might be appropriate, considering specific issues
+          </button>
+        </h4>
+        <div id="caution" class="collapse collapse-content">
+          <ul>
+            <li>
+              Normalization to a standardized submaximal task
+              (isometric/dynamic) that has similar characteristics to the task
+              of interest.
+            </li>
+            <li>
+              Normalization to the peak or mean EMG amplitude during the task
+              investigated.
+              <em
+                >For comparisons between tasks (e.g., walking vs. running).</em
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="recommendation-section low-probability">
+        <h4>
+          <button
+            class="btn btn-link"
+            data-toggle="collapse"
+            data-target="#lowProbability"
+            aria-expanded="false"
+            aria-controls="lowProbability"
+          >
+            <i class="fa fa-times-circle" aria-hidden="true"></i> No: High
+            probability that this is inappropriate
+          </button>
+        </h4>
+        <div id="lowProbability" class="collapse collapse-content">
+          <ul>
+            <li>Normalized to the maximal M-wave amplitude.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="btn-container text-center">
+        <button class="btn btn-primary">Select a New Matrix</button>
+        <button class="btn btn-secondary">Collect More Data</button>
+      </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://use.fontawesome.com/releases/v5.15.1/js/all.js"></script>
+  </body>
+</html>

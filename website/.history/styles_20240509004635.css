@@ -1,0 +1,54 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: white;
+}
+
+header {
+  background-color: #ebe8e8; /* light grey */
+  padding: 20px; /* adds padding inside the box */
+  border-radius: 5px; /* optional: rounds the corners of the box */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* optional: adds subtle shadow */
+  text-align: left; /* ensures text is aligned to the left */
+}
+
+.navbar {
+  border-bottom: 1px solid #b7b7b7;
+}
+
+header h1 {
+  margin: 0;
+  color: #333;
+}
+
+header p {
+  color: #666;
+}
+
+main {
+  padding: 20px;
+  text-align: center;
+}
+
+.topics {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 20px;
+}
+
+.topic {
+  background: white;
+  padding: 20px;
+  width: 30%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.topic img {
+  width: 100%;
+  height: auto;
+}
+
+.coming-soon p {
+  color: #999;
+}

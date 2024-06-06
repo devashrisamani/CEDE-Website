@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Amplitude Normalization - Collect Data</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div id="wrapper">
+      <header>
+        <div id="header-content">
+          <h1>CEDE</h1>
+          <nav>
+            <ul>
+              <li><a href="#">Matrix Selection</a></li>
+              <li><a href="#">Amplitude Normalization</a></li>
+              <li><a href="#">Collect Data</a></li>
+            </ul>
+          </nav>
+        </div>
+      </header>
+      <main>
+        <div id="decision-form">
+          <h2>Amplitude Normalization - Collect Data</h2>
+          <div class="option" onclick="selectOption('amplitude-features')">
+            <span>Amplitude features</span>
+            <span class="arrow">></span>
+          </div>
+          <div class="option" onclick="selectOption('temporal-features')">
+            <span>Temporal features</span>
+            <span class="arrow">></span>
+          </div>
+          <div class="option" onclick="selectOption('synergies')">
+            <span>Synergies</span>
+            <span class="arrow">></span>
+          </div>
+          <div class="option" onclick="selectOption('evoked-responses')">
+            <span>Evoked responses</span>
+            <span class="arrow">></span>
+          </div>
+          <button type="button" id="back-button" onclick="goBack()">
+            Back
+          </button>
+        </div>
+      </main>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
