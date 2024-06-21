@@ -8,7 +8,7 @@
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="index.css" />
+    <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-white">
@@ -30,40 +30,9 @@
           id="navbarNavAltMarkup"
         >
           <div class="navbar-nav">
-            <a class="nav-link active" href="index.html">Home</a>
-            <div class="nav-item dropdown">
-              <a
-                class="nav-link dropdown-toggle"
-                href="#"
-                id="matrixSelectionDropdown"
-                role="button"
-                data-bs-toggle="dropdown"
-                aria-expanded="false"
-              >
-                Matrix Selection
-              </a>
-              <ul
-                class="dropdown-menu"
-                aria-labelledby="matrixSelectionDropdown"
-              >
-                <li>
-                  <a class="dropdown-item" href="amplitude.html"
-                    >Amplitude Normalization</a
-                  >
-                </li>
-                <li>
-                  <a class="dropdown-item" href="#">Electrode Selection</a>
-                </li>
-                <li><a class="dropdown-item" href="#">Terminology</a></li>
-                <li>
-                  <a class="dropdown-item" href="#"
-                    >High-density surface electromyograph</a
-                  >
-                </li>
-                <li><a class="dropdown-item" href="#">Single Motor Unit</a></li>
-              </ul>
-            </div>
-            <a class="nav-link" href="faq.html">FAQs</a>
+            <a class="nav-link active" href="#">Home</a>
+            <a class="nav-link" href="#">Matrix Selection</a>
+            <a class="nav-link" href="#">FAQs</a>
             <a class="nav-link" href="#">Glossary</a>
           </div>
         </div>
@@ -111,13 +80,8 @@
             <img src="matrix.jpg" class="img-fluid" alt="Matrix" />
           </div>
         </div>
-        <div class="text-left mt-4">
-          <a
-            href="https://pubmed.ncbi.nlm.nih.gov/32569878/"
-            class="btn btn-primary"
-            target="_blank"
-            >Access the Editorial Paper</a
-          >
+        <div class="text-center mt-4 align-items-left">
+          <a href="#" class="btn btn-primary">Access the Editorial Paper</a>
         </div>
       </div>
     </div>
@@ -130,24 +94,22 @@
         <div class="row text-center">
           <!-- Amplitude Normalization -->
           <div class="col-md-4 mb-4">
-            <a href="amplitude.html" class="card-link">
-              <div class="card">
-                <img
-                  src="amplitude.jpg"
-                  class="card-img-top"
-                  alt="Amplitude Normalization"
-                />
-                <div class="card-body">
-                  <h5 class="card-title">Amplitude Normalization</h5>
-                  <p class="card-text">
-                    Includes a description of general considerations for
-                    normalization, design features that should be reported,
-                    definitions of each method, the pros and cons of each
-                    method, and 10 experiment...
-                  </p>
-                </div>
+            <div class="card">
+              <img
+                src="amplitude.jpg"
+                class="card-img-top"
+                alt="Amplitude Normalization"
+              />
+              <div class="card-body">
+                <h5 class="card-title">Amplitude Normalization</h5>
+                <p class="card-text">
+                  Includes a description of general considerations for
+                  normalization, design features that should be reported,
+                  definitions of each method, the pros and cons of each method,
+                  and 10 experiment...
+                </p>
               </div>
-            </a>
+            </div>
           </div>
 
           <!-- Electrode Selection -->
@@ -347,23 +309,6 @@
         </div>
       </div>
     </div>
-
-    <!-- <div class="supporters-container mt-5 p-4">
-      <div class="container">
-        <h3 class="text-center mb-4">Our Supporters</h3>
-        <div class="d-flex justify-content-center align-items-center flex-wrap">
-          <img
-            src="mcdonalds.png"
-            alt="McDonalds"
-            class="supporter-logo mx-3"
-          />
-          <img src="google.png" alt="Google" class="supporter-logo mx-3" />
-          <img src="apple.png" alt="Apple" class="supporter-logo mx-3" />
-          <img src="cocacola.png" alt="Coca Cola" class="supporter-logo mx-3" />
-          <img src="cocacola.png" alt="Coca Cola" class="supporter-logo mx-3" />
-        </div>
-      </div>
-    </div> -->
 
     <script src="script.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>

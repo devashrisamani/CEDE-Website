@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Amplitude Normalization</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles2.css" />
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-white">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">CEDE</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNavAltMarkup"
+          aria-controls="navbarNavAltMarkup"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div
+          class="collapse navbar-collapse justify-content-end"
+          id="navbarNavAltMarkup"
+        >
+          <div class="navbar-nav">
+            <a class="nav-link active" href="#">Home</a>
+            <a class="nav-link" href="#">Matrix Selection</a>
+            <a class="nav-link" href="#">FAQs</a>
+            <a class="nav-link" href="#">Glossary</a>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <div class="breadcrumb-container mt-5 p-4">
+      <a href="#" class="breadcrumb-item">Matrix Selection</a> >
+      <a href="#" class="breadcrumb-item active">Amplitude Normalization</a>
+    </div>
+
+    <div class="content-container mt-5 p-4">
+      <div class="container">
+        <h5 class="text-uppercase text-muted">Matrix Overview</h5>
+        <h3 class="text-left mb-4">Amplitude Normalization</h3>
+        <div class="row align-items-center">
+          <div class="col-md-6">
+            <p class="lead">
+              Includes a description of general considerations for
+              normalization, design features that should be reported,
+              definitions of each method, the pros and cons of each method, and
+              10 experimental contexts and FAQs.
+            </p>
+            <div class="button-container mt-3">
+              <a
+                href="https://pubmed.ncbi.nlm.nih.gov/32569878/"
+                class="btn btn-primary"
+                target="_blank
+              "
+                >Access the Full Paper</a
+              >
+            </div>
+          </div>
+          <div class="col-md-6 text-center">
+            <img
+              src="paper-placeholder.jpg"
+              class="img-fluid"
+              alt="Paper Placeholder"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-container mt-5 p-4">
+      <div class="container">
+        <h5 class="text-uppercase text-muted">Tool Overview</h5>
+        <h3 class="text-left mb-4">Interactive Tool</h3>
+        <div class="row align-items-center">
+          <div class="col-md-6">
+            <p class="lead">
+              This interactive tool was created to translate scientific
+              recommendations on how to normalize the amplitude of the EMG
+              signal. By answering a series of questions about your experiment
+              criteria, this tool guides you to arrive at a recommended
+              appropriate method to apply to your context.
+            </p>
+            <div class="button-container mt-3">
+              <a href="/matrix.html" class="btn btn-primary">Access the Tool</a>
+            </div>
+          </div>
+          <div class="col-md-6 text-center">
+            <img
+              src="tool-placeholder.jpg"
+              class="img-fluid"
+              alt="Tool Placeholder"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-container mt-5 p-4">
+      <div class="container">
+        <h5 class="text-uppercase text-muted">Learn More</h5>
+        <h3 class="text-left mb-4">Frequently Asked Questions</h3>
+        <div class="accordion" id="faqAccordion">
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingOne">
+              <button
+                class="accordion-button"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#collapseOne"
+                aria-expanded="true"
+                aria-controls="collapseOne"
+              >
+                What does Amplitude Normalization mean?
+              </button>
+            </h2>
+            <div
+              id="collapseOne"
+              class="accordion-collapse collapse show"
+              aria-labelledby="headingOne"
+              data-bs-parent="#faqAccordion"
+            >
+              <div class="accordion-body">
+                Amplitude normalization refers to...
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingTwo">
+              <button
+                class="accordion-button collapsed"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#collapseTwo"
+                aria-expanded="false"
+                aria-controls="collapseTwo"
+              >
+                When do I not need to normalize?
+              </button>
+            </h2>
+            <div
+              id="collapseTwo"
+              class="accordion-collapse collapse"
+              aria-labelledby="headingTwo"
+              data-bs-parent="#faqAccordion"
+            >
+              <div class="accordion-body">
+                You do not need to normalize when...
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingThree">
+              <button
+                class="accordion-button collapsed"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#collapseThree"
+                aria-expanded="false"
+                aria-controls="collapseThree"
+              >
+                How do I normalize?
+              </button>
+            </h2>
+            <div
+              id="collapseThree"
+              class="accordion-collapse collapse"
+              aria-labelledby="headingThree"
+              data-bs-parent="#faqAccordion"
+            >
+              <div class="accordion-body">
+                To normalize the EMG signal, you...
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="button-container mt-4">
+          <a href="#" class="btn btn-primary">See More Questions</a>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

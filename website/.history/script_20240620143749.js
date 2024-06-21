@@ -106,46 +106,38 @@ function showSection(sectionId) {
     .classList.add("active");
 }
 
+// toggle faq and search
 function toggleFAQ(element) {
   const answer = element.nextElementSibling;
-  const icon = element.querySelector(".faq-icon");
+  const icon = element.querySelector('.faq-icon');
 
-  if (answer.style.display === "block") {
-    answer.style.display = "none";
-    icon.textContent = "+";
+  if (answer.style.display === 'block') {
+    answer.style.display = 'none';
+    icon.textContent = '+';
   } else {
-    answer.style.display = "block";
-    icon.textContent = "-";
+    answer.style.display = 'block';
+    icon.textContent = '-';
   }
 }
 
-document.addEventListener("DOMContentLoaded", () => {
-  const searchInput = document.getElementById("faq-search");
-  const searchButton = document.getElementById("search-button");
+document.addEventListener('DOMContentLoaded', () => {
+  const searchInput = document.getElementById('faq-search');
 
-  function performSearch() {
-    const searchTerm = searchInput.value.toLowerCase();
-    const faqItems = document.querySelectorAll(".faq-item");
+  searchInput.addEventListener('input', function() {
+    const searchTerm = this.value.toLowerCase();
+    const faqItems = document.querySelectorAll('.faq-item');
 
-    faqItems.forEach(function (item) {
-      const questionText = item
-        .querySelector(".faq-question span")
-        .innerText.toLowerCase();
-      const answerText = item
-        .querySelector(".faq-answer p")
-        .innerText.toLowerCase();
+    faqItems.forEach(function(item) {
+      const questionText = item.querySelector('.faq-question span').innerText.toLowerCase();
+      const answerText = item.querySelector('.faq-answer p').innerText.toLowerCase();
 
-      if (
-        questionText.includes(searchTerm) ||
-        answerText.includes(searchTerm)
-      ) {
-        item.style.display = "block";
+      if (questionText.includes(searchTerm) || answerText.includes(searchTerm)) {
+        item.style.display = 'block';
       } else {
-        item.style.display = "none";
+        item.style.display = 'none';
       }
     });
-  }
+  });
+});
 
-  searchInput.addEventListener("input", performSearch);
-  searchButton.addEventListener("click", performSearch);
 });

@@ -1,0 +1,82 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f9f9f9;
+}
+
+header {
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.navbar {
+  border-bottom: 1px solid #cfcfcf;
+}
+
+header h1 {
+  margin: 0;
+  color: #333;
+}
+
+header p {
+  color: #666;
+}
+
+.welcome-section {
+  text-align: center;
+  margin: 0 auto;
+  max-width: 800px;
+}
+
+.welcome-section img {
+  width: 100%;
+  height: auto;
+  margin-top: 20px;
+}
+
+#why-cede-exists {
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+#card-container {
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.card {
+  border-radius: 5px;
+  overflow: hidden;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.card-img-top {
+  border-radius: 5px 5px 0 0;
+}
+
+#team-collaborators {
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+#supporters {
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.supporter-logo {
+  height: 50px;
+  margin: 10px;
+}

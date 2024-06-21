@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Recommendation</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: white;
+      }
+
+      #wrapper {
+        width: 100%;
+        text-align: center;
+      }
+
+      .navbar {
+        border-bottom: 1px solid #cfcfcf;
+      }
+
+      .breadcrumb {
+        background-color: white;
+        margin-bottom: 20px;
+      }
+
+      .breadcrumb-item a {
+        color: #007bff;
+        text-decoration: none;
+      }
+
+      .breadcrumb-item a:hover {
+        text-decoration: underline;
+      }
+
+      .header-title {
+        margin-top: 20px;
+        margin-bottom: 20px;
+      }
+
+      .recommendation-section {
+        padding: 20px;
+        border-radius: 5px;
+        margin-bottom: 15px;
+      }
+
+      .high-probability {
+        background-color: #d4edda;
+        border: 1px solid #c3e6cb;
+      }
+
+      .caution {
+        background-color: #fff3cd;
+        border: 1px solid #ffeeba;
+      }
+
+      .low-probability {
+        background-color: #f8d7da;
+        border: 1px solid #f5c6cb;
+      }
+
+      .btn-container {
+        margin-top: 20px;
+      }
+
+      .collapse-content {
+        padding-top: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-white">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">CEDE</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNavAltMarkup"
+          aria-controls="navbarNavAltMarkup"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div
+          class="collapse navbar-collapse justify-content-end"
+          id="navbarNavAltMarkup"
+        >
+          <div class="navbar-nav">
+            <a class="nav-link" href="#">Home</a>
+            <a class="nav-link" href="#">Matrix Selection</a>
+            <a class="nav-link" href="#">FAQs</a>
+            <a class="nav-link" href="#">Glossary</a>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container mt-5 px-5">
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item">
+            <a href="index.html">Matrix Selection</a>
+          </li>
+          <li class="breadcrumb-item">
+            <a href="amplitude.html">Amplitude Normalization</a>
+          </li>
+          <li class="breadcrumb-item">
+            <a href="inttool.html">Interactive Tool</a>
+          </li>
+          <li class="breadcrumb-item">
+            <a href="collectdata.html">Collect Data</a>
+          </li>
+          <li class="breadcrumb-item">
+            <a href="collectdata.html">Amplitude Features</a>
+          </li>
+          <li class="breadcrumb-item active" aria-current="page">
+            Recommendation
+          </li>
+        </ol>
+      </nav>
+
+      <div class="header-title text-center">
+        <h2>Recommendation</h2>
+        <p>
+          Based on the options you selected, these are the recommendations for
+          the experimental context
+        </p>
+        <p><strong id="recommendation-text"></strong></p>
+
+        <p>
+          Based on the options you selected, these are the recommendations for
+          the experimental context
+          <strong
+            >Amplitude comparison within a person and muscle, between
+            conditions/ tasks (within a session*)</strong
+          >. *Without removing electrodes.
+        </p>
+
+        <p>
+          Sourced from the paper
+          <a href="https://example.com">Besomi et al. 2020</a>.
+        </p>
+        <p>
+          It is suggested to use the most stringent method below. Expand a
+          method to learn more.
+        </p>
+      </div>
+
+      <div class="recommendation-section high-probability">
+        <h4>
+          <i class="fa fa-check-circle" aria-hidden="true"></i> Yes: High
+          probability that this is appropriate
+        </h4>
+        <div class="accordion" id="highProbabilityAccordion">
+          <div class="card">
+            <div class="card-header" id="headingOne">
+              <h5 class="mb-0">
+                <button
+                  class="btn btn-link"
+                  data-toggle="collapse"
+                  data-target="#collapseOne"
+                  aria-expanded="true"
+                  aria-controls="collapseOne"
+                >
+                  Normalization to the maximum voluntary contraction (MVC) in
+                  the same task/context as the task of interest (with matched
+                  contraction type*, muscle length/joint angle, and/or velocity)
+                  *isometric; concentric; eccentric.
+                </button>
+              </h5>
+            </div>
+            <div
+              id="collapseOne"
+              class="collapse"
+              aria-labelledby="headingOne"
+              data-parent="#highProbabilityAccordion"
+            >
+              <div class="card-body">
+                Additional information about this normalization method.
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-header" id="headingTwo">
+              <h5 class="mb-0">
+                <button
+                  class="btn btn-link collapsed"
+                  data-toggle="collapse"
+                  data-target="#collapseTwo"
+                  aria-expanded="false"
+                  aria-controls="collapseTwo"
+                >
+                  Normalization to a standardized isometric maximum voluntary
+                  contraction (MVC) when it is not possible to match all aspects
+                  of the task of interest (e.g., multiple tasks or muscles
+                  investigated, complex task).
+                </button>
+              </h5>
+            </div>
+            <div
+              id="collapseTwo"
+              class="collapse"
+              aria-labelledby="headingTwo"
+              data-parent="#highProbabilityAccordion"
+            >
+              <div class="card-body">
+                Additional information about this normalization method.
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-header" id="headingThree">
+              <h5 class="mb-0">
+                <button
+                  class="btn btn-link collapsed"
+                  data-toggle="collapse"
+                  data-target="#collapseThree"
+                  aria-expanded="false"
+                  aria-controls="collapseThree"
+                >
+                  Normalization to the peak or mean EMG amplitude during the
+                  task investigated.
+                  <em
+                    >For comparisons between conditions (e.g., pre-post
+                    intervention in a single session) for a single task (e.g.,
+                    running).</em
+                  >
+                </button>
+              </h5>
+            </div>
+            <div
+              id="collapseThree"
+              class="collapse"
+              aria-labelledby="headingThree"
+              data-parent="#highProbabilityAccordion"
+            >
+              <div class="card-body">
+                Additional information about this normalization method.
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-header" id="headingFour">
+              <h5 class="mb-0">
+                <button
+                  class="btn btn-link collapsed"
+                  data-toggle="collapse"
+                  data-target="#collapseFour"
+                  aria-expanded="false"
+                  aria-controls="collapseFour"
+                >
+                  Non-normalized EMG amplitude.
+                </button>
+              </h5>
+            </div>
+            <div
+              id="collapseFour"
+              class="collapse"
+              aria-labelledby="headingFour"
+              data-parent="#highProbabilityAccordion"
+            >
+              <div class="card-body">
+                Additional information about this normalization method.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="recommendation-section caution">
+        <h4>
+          <i class="fa fa-exclamation-triangle" aria-hidden="true"></i> Caution:
+          Might be appropriate, considering specific issues
+        </h4>
+        <div class="accordion" id="cautionAccordion">
+          <div class="card">
+            <div class="card-header" id="headingFive">
+              <h5 class="mb-0">
+                <button
+                  class="btn btn-link collapsed"
+                  data-toggle="collapse"
+                  data-target="#collapseFive"
+                  aria-expanded="false"
+                  aria-controls="collapseFive"
+                >
+                  Normalization to a standardized submaximal task
+                  (isometric/dynamic) that has similar characteristics to the
+                  task of interest.
+                </button>
+              </h5>
+            </div>
+            <div
+              id="collapseFive"
+              class="collapse"
+              aria-labelledby="headingFive"
+              data-parent="#cautionAccordion"
+            >
+              <div class="card-body">
+                Additional information about this normalization method.
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-header" id="headingSix">
+              <h5 class="mb-0">
+                <button
+                  class="btn btn-link collapsed"
+                  data-toggle="collapse"
+                  data-target="#collapseSix"
+                  aria-expanded="false"
+                  aria-controls="collapseSix"
+                >
+                  Normalization to the peak or mean EMG amplitude during the
+                  task investigated.
+                  <em
+                    >For comparisons between tasks (e.g., walking vs.
+                    running).</em
+                  >
+                </button>
+              </h5>
+            </div>
+            <div
+              id="collapseSix"
+              class="collapse"
+              aria-labelledby="headingSix"
+              data-parent="#cautionAccordion"
+            >
+              <div class="card-body">
+                Additional information about this normalization method.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="recommendation-section low-probability">
+        <h4>
+          <i class="fa fa-times-circle" aria-hidden="true"></i> No: High
+          probability that this is inappropriate
+        </h4>
+        <div class="accordion" id="lowProbabilityAccordion">
+          <div class="card">
+            <div class="card-header" id="headingSeven">
+              <h5 class="mb-0">
+                <button
+                  class="btn btn-link collapsed"
+                  data-toggle="collapse"
+                  data-target="#collapseSeven"
+                  aria-expanded="false"
+                  aria-controls="collapseSeven"
+                >
+                  Normalized to the maximal M-wave amplitude.
+                </button>
+              </h5>
+            </div>
+            <div
+              id="collapseSeven"
+              class="collapse"
+              aria-labelledby="headingSeven"
+              data-parent="#lowProbabilityAccordion"
+            >
+              <div class="card-body">
+                Additional information about this normalization method.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="btn-container text-center">
+        <button class="btn btn-primary" onclick="location.href='index.html'">
+          Select a New Matrix
+        </button>
+        <button
+          class="btn btn-secondary"
+          onclick="location.href='collectdata.html'"
+        >
+          Collect More Data
+        </button>
+      </div>
+    </div>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const recommendation = localStorage.getItem("recommendation");
+        document.getElementById("recommendation-text").innerText =
+          recommendation;
+      });
+    </script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://use.fontawesome.com/releases/v5.15.1/js/all.js"></script>
+  </body>
+</html>

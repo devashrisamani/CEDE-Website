@@ -1,0 +1,94 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #ffffff;
+}
+
+header {
+  padding: 20px;
+  text-align: center;
+}
+
+.navbar {
+  border-bottom: 1px solid #cfcfcf;
+  background-color: #ffffff;
+}
+
+header h1 {
+  margin: 0;
+  color: #333;
+}
+
+header p {
+  color: #666;
+}
+
+.breadcrumb-container {
+  font-size: 1rem;
+  padding: 40px;
+  max-width: 1000px; /* Set a max-width */
+  margin-bottom: 5px;
+}
+
+.content-container {
+  background-color: #f8f9fa; /* Light grey background */
+  border-radius: 10px;
+  padding: 40px; /* Add padding inside the container */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional: adds subtle shadow */
+  margin: 0 auto; /* Center the container */
+  max-width: 1000px; /* Set a max-width */
+}
+
+.content-container h5 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #6c757d; /* Light grey text color */
+}
+
+.content-container h3 {
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.content-container p {
+  margin-bottom: 1rem;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.button-container {
+  text-align: left;
+  display: inline-block;
+}
+
+.button-container .btn {
+  font-size: 1rem;
+  padding: 0.5rem 1rem;
+  border-radius: 25px;
+  border: 2px solid #007bff;
+  background-color: white;
+  color: #007bff;
+  text-transform: uppercase;
+}
+
+.button-container .btn:hover {
+  background-color: #007bff;
+  color: white;
+}
+
+.accordion-button::after {
+  background-image: none;
+}
+
+.accordion-button {
+  font-size: 1rem;
+  text-align: left;
+  padding: 0.75rem 1.25rem;
+}
+
+.accordion-body {
+  font-size: 1rem;
+  text-align: left;
+  padding: 0.75rem 1.25rem;
+}

@@ -106,6 +106,7 @@ function showSection(sectionId) {
     .classList.add("active");
 }
 
+// toggle faq and search
 function toggleFAQ(element) {
   const answer = element.nextElementSibling;
   const icon = element.querySelector(".faq-icon");

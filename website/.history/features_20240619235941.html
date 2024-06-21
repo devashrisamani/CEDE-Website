@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Amplitude Features - CEDE</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="features.css" />
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-white">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">CEDE</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNavAltMarkup"
+          aria-controls="navbarNavAltMarkup"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div
+          class="collapse navbar-collapse justify-content-end"
+          id="navbarNavAltMarkup"
+        >
+          <div class="navbar-nav">
+            <a class="nav-link" href="#">Home</a>
+            <a class="nav-link" href="#">Matrix Selection</a>
+            <a class="nav-link" href="#">FAQs</a>
+            <a class="nav-link" href="#">Glossary</a>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container mt-5 px-5">
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="#">Matrix Selection</a></li>
+          <li class="breadcrumb-item">
+            <a href="#">Amplitude Normalization</a>
+          </li>
+          <li class="breadcrumb-item"><a href="#">Interactive Tool</a></li>
+          <li class="breadcrumb-item active" aria-current="page">
+            Collect Data
+          </li>
+          <li class="breadcrumb-item active" aria-current="page">
+            Amplitude Features
+          </li>
+        </ol>
+      </nav>
+      <h2 class="mb-4">Amplitude Features</h2>
+      <form id="question-form">
+        <div class="question-container">
+          <div class="question">
+            <h3>Question 1</h3>
+            <label
+              >Does your experiment involve comparisons between muscles and/or
+              comparisons within a muscle?</label
+            >
+            <div
+              class="option"
+              onclick="selectOption(this, 'muscles')"
+              id="q1-1"
+            >
+              <span
+                >Comparisons between muscles (e.g. vastus lateralis vs. vastus
+                medialis during knee extension task)</span
+              >
+            </div>
+            <div
+              class="option"
+              onclick="selectOption(this, 'within-muscle')"
+              id="q1-2"
+            >
+              <span
+                >Comparisons within a muscle (e.g. vastus lateralis pre and post
+                intervention)</span
+              >
+            </div>
+            <div class="option" onclick="selectOption(this, 'both')" id="q1-3">
+              <span>Both</span>
+            </div>
+          </div>
+        </div>
+        <div class="question-container mt-4">
+          <div class="question">
+            <h3>Question 2</h3>
+            <label
+              >Does your experiment involve comparisons between sessions and/or
+              comparisons within a session?</label
+            >
+            <div
+              class="option"
+              onclick="selectOption(this, 'between-sessions')"
+              id="q2-1"
+            >
+              <span
+                >Comparisons between sessions (e.g. repeated measures in
+                different time points)</span
+              >
+            </div>
+            <div
+              class="option"
+              onclick="selectOption(this, 'within-session')"
+              id="q2-2"
+            >
+              <span
+                >Comparisons within a session (e.g. comparisons of two tasks
+                during a laboratory session)</span
+              >
+            </div>
+            <div class="option" onclick="selectOption(this, 'both')" id="q2-3">
+              <span>Both</span>
+            </div>
+          </div>
+        </div>
+        <div class="question-container mt-4">
+          <div class="question">
+            <h3>Question 3</h3>
+            <label
+              >Does your experiment involve comparisons between participant
+              groups and/or comparisons within a participant group?</label
+            >
+            <div
+              class="option"
+              onclick="selectOption(this, 'between-groups')"
+              id="q3-1"
+            >
+              <span
+                >Comparisons between participant groups (e.g. pain condition vs.
+                control group)</span
+              >
+            </div>
+            <div
+              class="option"
+              onclick="selectOption(this, 'within-group')"
+              id="q3-2"
+            >
+              <span
+                >Comparisons within a participant group (e.g. knee extension at
+                10% and 50% of MVC in healthy individuals)</span
+              >
+            </div>
+            <div class="option" onclick="selectOption(this, 'both')" id="q3-3">
+              <span>Both</span>
+            </div>
+          </div>
+        </div>
+        <div class="text-center mt-4">
+          <button type="button" class="btn" id="back-button" onclick="goBack()">
+            Back
+          </button>
+          <button type="submit" class="btn" id="submit-button" disabled>
+            Submit
+          </button>
+        </div>
+      </form>
+      <div id="recommendation" class="mt-4"></div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+      function selectOption(element, option) {
+        console.log("Option selected:", option);
+        // Add logic to handle the selected option, such as updating the page content
+        element.classList.toggle("selected");
+        checkIfAllQuestionsAnswered();
+      }
+
+      function goBack() {
+        window.history.back(); // This will take you to the previous page in the history stack
+      }
+
+      // Decision tree functions
+      const questions = [
+        "Does your experiment involve comparisons between muscles or within muscles?",
+        "Does your experiment involve comparisons between sessions or within a session?",
+        "Does your experiment involve within-group comparisons or between-groups comparisons?",
+        "Can your participants perform MVC?",
+      ];
+
+      const responses = [
+        ["Between muscles", "Within muscle"],
+        ["Between sessions", "Within a session"],
+        ["Within-group comparison", "Between-groups comparison"],
+        ["Yes", "No"],
+      ];
+
+      const decisionTree = {
+        "Within muscle": {
+          "Within a session": {
+            "Within-group comparison": {
+              Yes: "Experimental context 1: Amplitude comparison within a person and muscle, between conditions/tasks (within a session). *Without removing electrodes (1.1 - 1.6)",
+            },
+          },
+        },
+      };
+
+      function getRecommendation(responses) {
+        let node = decisionTree;
+        for (let response of responses) {
+          if (node[response]) {
+            node = node[response];
+          } else {
+            return "No recommendation found for the given responses.";
+          }
+        }
+        return node;
+      }
+
+      document.addEventListener("DOMContentLoaded", function () {
+        const form = document.getElementById("question-form");
+        const submitButton = document.getElementById("submit-button");
+        const options = form.querySelectorAll(".option");
+
+        options.forEach((option) => {
+          option.addEventListener("click", function () {
+            option.classList.toggle("selected");
+            checkIfAllQuestionsAnswered();
+          });
+        });
+
+        function checkIfAllQuestionsAnswered() {
+          const allAnswered =
+            document.querySelectorAll(".selected").length >= 3;
+          submitButton.disabled = !allAnswered;
+        }
+
+        form.addEventListener("submit", function (event) {
+          event.preventDefault();
+          const userResponses = [
+            document.querySelector(
+              "#q1-1.selected, #q1-2.selected, #q1-3.selected"
+            ).innerText,
+            document.querySelector(
+              "#q2-1.selected, #q2-2.selected, #q2-3.selected"
+            ).innerText,
+            document.querySelector(
+              "#q3-1.selected, #q3-2.selected, #q3-3.selected"
+            ).innerText,
+            "Yes", // Assuming this is pre-determined for the example
+          ];
+          const recommendation = getRecommendation(userResponses);
+          document.getElementById("recommendation").innerText = recommendation;
+        });
+      });
+    </script>
+  </body>
+</html>

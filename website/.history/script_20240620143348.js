@@ -106,6 +106,7 @@ function showSection(sectionId) {
     .classList.add("active");
 }
 
+// toggle faq and search
 function toggleFAQ(element) {
   const answer = element.nextElementSibling;
   const icon = element.querySelector(".faq-icon");
@@ -119,33 +120,22 @@ function toggleFAQ(element) {
   }
 }
 
-document.addEventListener("DOMContentLoaded", () => {
-  const searchInput = document.getElementById("faq-search");
-  const searchButton = document.getElementById("search-button");
+document.getElementById("faq-search").addEventListener("input", function () {
+  const searchTerm = this.value.toLowerCase();
+  const faqItems = document.querySelectorAll(".faq-item");
 
-  function performSearch() {
-    const searchTerm = searchInput.value.toLowerCase();
-    const faqItems = document.querySelectorAll(".faq-item");
+  faqItems.forEach(function (item) {
+    const questionText = item
+      .querySelector(".faq-question span")
+      .innerText.toLowerCase();
+    const answerText = item
+      .querySelector(".faq-answer p")
+      .innerText.toLowerCase();
 
-    faqItems.forEach(function (item) {
-      const questionText = item
-        .querySelector(".faq-question span")
-        .innerText.toLowerCase();
-      const answerText = item
-        .querySelector(".faq-answer p")
-        .innerText.toLowerCase();
-
-      if (
-        questionText.includes(searchTerm) ||
-        answerText.includes(searchTerm)
-      ) {
-        item.style.display = "block";
-      } else {
-        item.style.display = "none";
-      }
-    });
-  }
-
-  searchInput.addEventListener("input", performSearch);
-  searchButton.addEventListener("click", performSearch);
+    if (questionText.includes(searchTerm) || answerText.includes(searchTerm)) {
+      item.style.display = "block";
+    } else {
+      item.style.display = "none";
+    }
+  });
 });
