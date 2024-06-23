@@ -24,8 +24,7 @@
       .breadcrumb {
         background-color: white;
         padding: 0;
-        margin-bottom: 10px;
-        padding-left: 42px;
+        margin-bottom: 20px;
       }
 
       .breadcrumb-item a {
@@ -37,19 +36,23 @@
         text-decoration: underline;
       }
 
+      .container {
+        max-width: 1100px;
+      }
+
       .content-container {
-        background-color: #f8f9fa; /* Light grey background */
+        background-color: #f8f9fa;
         border-radius: 10px;
-        padding: 40px; /* Add padding inside the container */
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional: adds subtle shadow */
-        margin: 0 auto 96px auto; /* Center the container and add bottom margin */
-        max-width: 1000px; /* Set a max-width */
+        padding: 40px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        margin: 0 auto;
+        max-width: 1000px;
       }
 
       .content-container h5 {
         font-size: 1.25rem;
         font-weight: 600;
-        color: #6c757d; /* Light grey text color */
+        color: #6c757d;
       }
 
       .content-container h3 {
@@ -84,12 +87,7 @@
       }
 
       .accordion-button::after {
-        background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');
-        transform: rotate(0deg);
-      }
-
-      .accordion-button:not(.collapsed)::after {
-        transform: rotate(180deg);
+        background-image: none;
       }
 
       .accordion-button {
@@ -178,8 +176,8 @@
       </nav>
     </div>
 
-    <div class="content-container mt-5 p-4">
-      <div class="container">
+    <div class="container">
+      <div class="content-container mt-5 p-4">
         <h5 class="text-uppercase text-muted">Matrix Overview</h5>
         <h3 class="text-left mb-4">Amplitude Normalization</h3>
         <div class="row align-items-center">
@@ -210,8 +208,8 @@
       </div>
     </div>
 
-    <div class="content-container mt-5 p-4">
-      <div class="container">
+    <div class="container">
+      <div class="content-container mt-5 p-4">
         <h5 class="text-uppercase text-muted">Tool Overview</h5>
         <h3 class="text-left mb-4">Interactive Tool</h3>
         <div class="row align-items-center">
@@ -238,11 +236,11 @@
       </div>
     </div>
 
-    <div class="content-container mt-5 p-4">
-      <div class="container">
+    <div class="container mb-5">
+      <div class="content-container mt-5 p-4">
         <h5 class="text-uppercase text-muted">Learn More</h5>
         <h3 class="text-left mb-4">Frequently Asked Questions</h3>
-        <div class="accordion" id="faqAccordion">
+        <div class="accordion mb-5" id="faqAccordion">
           <div class="accordion-item">
             <h2 class="accordion-header" id="headingOne">
               <button
@@ -250,7 +248,7 @@
                 type="button"
                 data-bs-toggle="collapse"
                 data-bs-target="#collapseOne"
-                aria-expanded="true"
+                aria-expanded="false"
                 aria-controls="collapseOne"
               >
                 What does Amplitude Normalization mean?
@@ -317,7 +315,7 @@
           </div>
         </div>
         <div class="button-container mt-4">
-          <a href="faq.html" class="btn btn-primary">See More Questions</a>
+          <a href="#" class="btn btn-primary">See More Questions</a>
         </div>
       </div>
     </div>
