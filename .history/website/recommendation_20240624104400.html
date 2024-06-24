@@ -66,22 +66,16 @@
         border: 1px solid #f5c6cb;
       }
 
-      .btn-container-wrapper {
-        display: flex;
-        justify-content: center;
-        width: 100%;
-      }
-
       .btn-container {
+        margin-top: 20px;
         position: fixed;
-        bottom: 0;
+        bottom: 20px;
+        left: 50%;
+        transform: translateX(-50%);
         width: 100%;
-        background-color: white;
-        padding: 10px 0;
         display: flex;
         justify-content: center;
-        border-top: 1px solid #cfcfcf;
-        z-index: 1000;
+        gap: 20px;
       }
 
       .btn-container .btn {
@@ -92,11 +86,6 @@
         background-color: white;
         color: #007bff;
         text-transform: uppercase;
-        margin-right: 20px;
-      }
-
-      .btn-container .btn:last-child {
-        margin-right: 0;
       }
 
       .btn-container .btn:hover {
@@ -104,20 +93,26 @@
         color: #007bff;
       }
 
+      .collapse-content {
+        padding-top: 10px;
+      }
+
+      .btn-link {
+        text-decoration: none;
+        color: inherit;
+      }
+
+      .btn-link:hover {
+        text-decoration: underline;
+      }
+
       .card-body {
         text-align: left;
-        color: black;
       }
 
       .card-header .btn-link {
         text-align: left;
         width: 100%;
-        text-decoration: none;
-        color: black;
-      }
-
-      .container {
-        padding-bottom: 80px; /* to ensure the content does not hide behind the fixed button */
       }
     </style>
   </head>
@@ -253,15 +248,13 @@
         <div id="low-probability-methods" class="accordion"></div>
       </div>
 
-      <div class="btn-container-wrapper">
-        <div class="btn-container">
-          <button class="btn" onclick="location.href='index.html'">
-            Select a New Matrix
-          </button>
-          <button class="btn" onclick="location.href='collectdata.html'">
-            Collect More Data
-          </button>
-        </div>
+      <div class="btn-container">
+        <button class="btn" onclick="location.href='index.html'">
+          Select a New Matrix
+        </button>
+        <button class="btn" onclick="location.href='collectdata.html'">
+          Collect More Data
+        </button>
       </div>
     </div>
 
