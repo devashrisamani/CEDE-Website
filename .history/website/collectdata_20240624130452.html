@@ -23,6 +23,23 @@
 
       .navbar {
         border-bottom: 1px solid #cfcfcf;
+        background-color: #ffffff;
+      }
+
+      .breadcrumb {
+        background-color: white;
+        padding: 0;
+        margin-bottom: 10px;
+        padding-left: 42px;
+      }
+
+      .breadcrumb-item a {
+        color: #007bff;
+        text-decoration: none;
+      }
+
+      .breadcrumb-item a:hover {
+        text-decoration: underline;
       }
 
       main {
@@ -59,7 +76,7 @@
       button {
         font-size: 1rem;
         padding: 0.5rem 1rem;
-        border-radius: 10px; /* Adjusted for slightly rounded corners */
+        border-radius: 30px;
         border: 2px solid #007bff;
         background-color: white;
         color: #007bff;
@@ -67,22 +84,27 @@
       }
 
       .btn-primary {
-        font-size: 1rem;
-        padding: 0.5rem 1rem;
-        border-radius: 10px; /* Adjusted for slightly rounded corners */
+        background-color: #007bff;
+        color: white;
         border: 2px solid #007bff;
-        background-color: white;
-        color: #007bff;
-        text-transform: uppercase;
       }
 
       .btn-primary:hover {
-        background-color: #007bff;
-        color: white;
+        background-color: white;
+        color: #007bff;
+        border: 2px solid #007bff;
       }
 
-      .breadcrumb-item a {
-        text-decoration: none; /* Remove underline from breadcrumb links */
+      .btn-secondary {
+        background-color: white;
+        color: #007bff;
+        border: 2px solid #007bff;
+      }
+
+      .btn-secondary:hover {
+        background-color: #007bff;
+        color: white;
+        border: 2px solid #007bff;
       }
     </style>
   </head>
@@ -188,9 +210,9 @@
       <div class="text-center mt-4">
         <button
           type="button"
-          class="btn btn-primary"
+          class="btn btn-secondary"
           id="back-button"
-          onclick="goBack()"
+          onclick="window.location.href='amplitude.html'"
         >
           Back
         </button>
