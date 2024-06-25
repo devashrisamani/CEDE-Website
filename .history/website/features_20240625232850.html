@@ -384,9 +384,11 @@
     <script>
       function selectOption(element) {
         const name = element.name;
-        document.querySelectorAll(`input[name="${name}"]`).forEach((input) => {
-          input.closest(".option").classList.remove("selected");
-        });
+        const options = document
+          .querySelectorAll(`input[name="${name}"]`)
+          .forEach((input) => {
+            input.closest(".option").classList.remove("selected");
+          });
 
         element.closest(".option").classList.add("selected");
         document.getElementById("submit-button").disabled = false;
@@ -416,10 +418,14 @@
 
         let node = decisionTree;
         for (let response of userResponses) {
-          if (response && node[response]) {
+          if (node[response]) {
             node = node[response];
           } else {
-            alert("Please select the correct options before submitting.");
+            localStorage.setItem(
+              "recommendation",
+              "No recommendation found for the given responses."
+            );
+            window.location.href = "recommendation.html";
             return;
           }
         }
@@ -428,7 +434,6 @@
         window.location.href = "recommendation.html";
       }
     </script>
-
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
   </body>
 </html>
