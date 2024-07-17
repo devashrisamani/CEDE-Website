@@ -60,23 +60,12 @@ function getRecommendation() {
   console.log("q3 value:", q3Value);
   console.log("q3a value:", q3aValue);
 
-  // Ensure the values are exactly as expected in the mapping
-  const mappedQ1 = valueMapping[q1Value] || `Unmapped value: ${q1Value}`;
-  const mappedQ2 = valueMapping[q2Value] || `Unmapped value: ${q2Value}`;
-  const mappedQ3 = valueMapping[q3Value] || `Unmapped value: ${q3Value}`;
-  const mappedQ3a = valueMapping[q3aValue] || `Unmapped value: ${q3aValue}`;
-
-  console.log("Mapped q1 value:", mappedQ1);
-  console.log("Mapped q2 value:", mappedQ2);
-  console.log("Mapped q3 value:", mappedQ3);
-  console.log("Mapped q3a value:", mappedQ3a);
-
-  // Map the longer user-selected values to the shorter JSON rule values
+  // Map the concise values to the JSON rule values
   const userResponses = {
-    muscle_comparison: mappedQ1,
-    session_comparison: mappedQ2,
-    group_comparison: mappedQ3,
-    perform_mvc: mappedQ3a,
+    muscle_comparison: valueMapping[q1Value],
+    session_comparison: valueMapping[q2Value],
+    group_comparison: valueMapping[q3Value],
+    perform_mvc: valueMapping[q3aValue],
   };
 
   console.log("User responses:", userResponses);

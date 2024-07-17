@@ -1,5 +1,17 @@
 let rules = []; // Ensure this is defined globally
 
+// Mapping for questions to JSON keys
+const questionMapping = {
+  "Does your experiment involve comparisons between muscles and/or comparisons within a muscle?":
+    "muscle_comparison",
+  "Does your experiment involve comparisons between sessions and/or comparisons within a session?":
+    "session_comparison",
+  "Does your experiment involve comparisons between participant groups and/or comparisons within a participant group?":
+    "group_comparison",
+  "Is your participant group(s) able to perform a maximum contraction?":
+    "perform_mvc",
+};
+
 // Mapping for user-selected values to JSON values
 const valueMapping = {
   "Comparisons between muscles (e.g. vastus lateralis vs. vastus medialis during knee extension task)":
@@ -10,7 +22,7 @@ const valueMapping = {
   "Comparisons between sessions (e.g. repeated measures in different time points)":
     "Between sessions",
   "Comparisons within a session (e.g. comparisons of two tasks during a laboratory session)":
-    "Within a session",
+    "Within session",
   "Comparisons between participant groups (e.g. pain condition vs. control group)":
     "Between-groups comparison",
   "Comparisons within a participant group (e.g. knee extension at 10% and 50% of MVC in healthy individuals)":
@@ -60,23 +72,15 @@ function getRecommendation() {
   console.log("q3 value:", q3Value);
   console.log("q3a value:", q3aValue);
 
-  // Ensure the values are exactly as expected in the mapping
-  const mappedQ1 = valueMapping[q1Value] || `Unmapped value: ${q1Value}`;
-  const mappedQ2 = valueMapping[q2Value] || `Unmapped value: ${q2Value}`;
-  const mappedQ3 = valueMapping[q3Value] || `Unmapped value: ${q3Value}`;
-  const mappedQ3a = valueMapping[q3aValue] || `Unmapped value: ${q3aValue}`;
+  // Log the valueMapping to ensure it is correct
+  console.log("valueMapping:", valueMapping);
 
-  console.log("Mapped q1 value:", mappedQ1);
-  console.log("Mapped q2 value:", mappedQ2);
-  console.log("Mapped q3 value:", mappedQ3);
-  console.log("Mapped q3a value:", mappedQ3a);
-
-  // Map the longer user-selected values to the shorter JSON rule values
+  // Map the concise values to the detailed ones
   const userResponses = {
-    muscle_comparison: mappedQ1,
-    session_comparison: mappedQ2,
-    group_comparison: mappedQ3,
-    perform_mvc: mappedQ3a,
+    muscle_comparison: valueMapping[q1Value],
+    session_comparison: valueMapping[q2Value],
+    group_comparison: valueMapping[q3Value],
+    perform_mvc: valueMapping[q3aValue],
   };
 
   console.log("User responses:", userResponses);

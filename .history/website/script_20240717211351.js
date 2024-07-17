@@ -60,11 +60,11 @@ function getRecommendation() {
   console.log("q3 value:", q3Value);
   console.log("q3a value:", q3aValue);
 
-  // Ensure the values are exactly as expected in the mapping
-  const mappedQ1 = valueMapping[q1Value] || `Unmapped value: ${q1Value}`;
-  const mappedQ2 = valueMapping[q2Value] || `Unmapped value: ${q2Value}`;
-  const mappedQ3 = valueMapping[q3Value] || `Unmapped value: ${q3Value}`;
-  const mappedQ3a = valueMapping[q3aValue] || `Unmapped value: ${q3aValue}`;
+  // Check if the values exist in the valueMapping
+  const mappedQ1 = valueMapping[q1Value];
+  const mappedQ2 = valueMapping[q2Value];
+  const mappedQ3 = valueMapping[q3Value];
+  const mappedQ3a = valueMapping[q3aValue];
 
   console.log("Mapped q1 value:", mappedQ1);
   console.log("Mapped q2 value:", mappedQ2);

@@ -40,6 +40,17 @@ function goBack() {
   window.location.href = "collectdata.html";
 }
 
+// Function to normalize and map values
+function normalizeAndMap(value) {
+  const trimmedValue = value.trim().toLowerCase();
+  for (const key in valueMapping) {
+    if (key.trim().toLowerCase() === trimmedValue) {
+      return valueMapping[key];
+    }
+  }
+  return undefined;
+}
+
 // Function to get recommendation based on user responses
 function getRecommendation() {
   const q1Value = document
@@ -60,11 +71,11 @@ function getRecommendation() {
   console.log("q3 value:", q3Value);
   console.log("q3a value:", q3aValue);
 
-  // Ensure the values are exactly as expected in the mapping
-  const mappedQ1 = valueMapping[q1Value] || `Unmapped value: ${q1Value}`;
-  const mappedQ2 = valueMapping[q2Value] || `Unmapped value: ${q2Value}`;
-  const mappedQ3 = valueMapping[q3Value] || `Unmapped value: ${q3Value}`;
-  const mappedQ3a = valueMapping[q3aValue] || `Unmapped value: ${q3aValue}`;
+  // Normalize and map the values
+  const mappedQ1 = normalizeAndMap(q1Value);
+  const mappedQ2 = normalizeAndMap(q2Value);
+  const mappedQ3 = normalizeAndMap(q3Value);
+  const mappedQ3a = normalizeAndMap(q3aValue);
 
   console.log("Mapped q1 value:", mappedQ1);
   console.log("Mapped q2 value:", mappedQ2);

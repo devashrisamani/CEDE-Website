@@ -40,6 +40,13 @@ function goBack() {
   window.location.href = "collectdata.html";
 }
 
+// Function to map values
+function mapValue(value) {
+  const mappedValue = valueMapping[value];
+  console.log(`Mapping "${value}" to "${mappedValue}"`);
+  return mappedValue;
+}
+
 // Function to get recommendation based on user responses
 function getRecommendation() {
   const q1Value = document
@@ -60,11 +67,11 @@ function getRecommendation() {
   console.log("q3 value:", q3Value);
   console.log("q3a value:", q3aValue);
 
-  // Ensure the values are exactly as expected in the mapping
-  const mappedQ1 = valueMapping[q1Value] || `Unmapped value: ${q1Value}`;
-  const mappedQ2 = valueMapping[q2Value] || `Unmapped value: ${q2Value}`;
-  const mappedQ3 = valueMapping[q3Value] || `Unmapped value: ${q3Value}`;
-  const mappedQ3a = valueMapping[q3aValue] || `Unmapped value: ${q3aValue}`;
+  // Map the values
+  const mappedQ1 = mapValue(q1Value);
+  const mappedQ2 = mapValue(q2Value);
+  const mappedQ3 = mapValue(q3Value);
+  const mappedQ3a = mapValue(q3aValue);
 
   console.log("Mapped q1 value:", mappedQ1);
   console.log("Mapped q2 value:", mappedQ2);

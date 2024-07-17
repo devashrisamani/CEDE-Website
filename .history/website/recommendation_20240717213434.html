@@ -267,13 +267,7 @@
 
     <script>
       document.addEventListener("DOMContentLoaded", function () {
-        // Fetch the recommendation from localStorage
         const recommendation = localStorage.getItem("recommendation");
-
-        console.log(
-          "Fetched recommendation from localStorage:",
-          recommendation
-        ); // Debug step
 
         // Example methods data
         const methodsData = {
@@ -320,64 +314,6 @@
                 },
               ],
             },
-          "Experimental context 2: Amplitude comparison within a person and muscle, between sessions (i.e. re-application of electrodes)":
-            {
-              high: [
-                {
-                  title:
-                    "Normalization to the maximum voluntary contraction (MVC) in the same task/context as the task of interest (with matched contraction type*, muscle length/joint angle, and/or velocity) *isometric; concentric; eccentric.",
-                  content:
-                    'Normalizing to maximum voluntary contraction (MVC) provides a relative value useful to compare the magnitude of muscle activity in different tasks or conditions. This represents the activity as a proportion of the maximum capacity of the muscle, as long as the normalization contraction is collected in the same position, velocity, and contraction types as the task of interest. <a href="method.html">See More</a>',
-                },
-                {
-                  title:
-                    "Normalization to a standardized isometric maximum voluntary contraction (MVC) when it is not possible to match all aspects of the task of interest (e.g., multiple tasks or muscles investigated, complex task).",
-                  content: "Additional information about this method.",
-                },
-              ],
-              caution: [
-                {
-                  title:
-                    "Normalization to a standardized submaximal task (isometric/dynamic) that has similar characteristics to the task of interest.",
-                  content: "Additional information about this method.",
-                },
-              ],
-              low: [
-                {
-                  title: "Normalized to the maximal M-wave amplitude.",
-                  content: "Additional information about this method.",
-                },
-              ],
-            },
-          "Experimental context 3: Amplitude comparison between muscles during the same task (same muscle in different participants; or different muscles in the same participant ) (3.1 - 3.6)":
-            {
-              high: [
-                {
-                  title:
-                    "Normalization to the maximum voluntary contraction (MVC) in the same task/context as the task of interest (with matched contraction type*, muscle length/joint angle, and/or velocity) *isometric; concentric; eccentric.",
-                  content:
-                    'Normalizing to maximum voluntary contraction (MVC) provides a relative value useful to compare the magnitude of muscle activity in different tasks or conditions. This represents the activity as a proportion of the maximum capacity of the muscle, as long as the normalization contraction is collected in the same position, velocity, and contraction types as the task of interest. <a href="method.html">See More</a>',
-                },
-                {
-                  title:
-                    "Normalization to a standardized isometric maximum voluntary contraction (MVC) when it is not possible to match all aspects of the task of interest (e.g., multiple tasks or muscles investigated, complex task).",
-                  content: "Additional information about this method.",
-                },
-              ],
-              caution: [
-                {
-                  title:
-                    "Normalization to a standardized submaximal task (isometric/dynamic) that has similar characteristics to the task of interest.",
-                  content: "Additional information about this method.",
-                },
-              ],
-              low: [
-                {
-                  title: "Normalized to the maximal M-wave amplitude.",
-                  content: "Additional information about this method.",
-                },
-              ],
-            },
           // Add other experimental contexts here if needed
         };
 
@@ -386,32 +322,32 @@
           element.innerHTML = methods
             .map(
               (method, index) => `
-                <div class="card">
-                  <div class="card-header" id="${elementId}Heading${index}">
-                    <h5 class="mb-0">
-                      <button
-                        class="btn btn-link collapsed"
-                        data-bs-toggle="collapse"
-                        data-bs-target="#${elementId}Collapse${index}"
-                        aria-expanded="false"
-                        aria-controls="${elementId}Collapse${index}"
-                      >
-                        ${method.title}
-                      </button>
-                    </h5>
-                  </div>
-                  <div
-                    id="${elementId}Collapse${index}"
-                    class="collapse"
-                    aria-labelledby="${elementId}Heading${index}"
-                    data-parent="#${elementId}"
+            <div class="card">
+              <div class="card-header" id="${elementId}Heading${index}">
+                <h5 class="mb-0">
+                  <button
+                    class="btn btn-link collapsed"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#${elementId}Collapse${index}"
+                    aria-expanded="false"
+                    aria-controls="${elementId}Collapse${index}"
                   >
-                    <div class="card-body">
-                      ${method.content}
-                    </div>
-                  </div>
+                    ${method.title}
+                  </button>
+                </h5>
+              </div>
+              <div
+                id="${elementId}Collapse${index}"
+                class="collapse"
+                aria-labelledby="${elementId}Heading${index}"
+                data-parent="#${elementId}"
+              >
+                <div class="card-body">
+                  ${method.content}
                 </div>
-              `
+              </div>
+            </div>
+          `
             )
             .join("");
         }
@@ -429,15 +365,11 @@
             "low-probability-methods"
           );
         } else {
-          console.log(
-            "No matching recommendation found or no methods data for recommendation."
-          ); // Debug step
           document.getElementById("recommendation-text").innerText =
             "No recommendation found.";
         }
       });
     </script>
-
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>

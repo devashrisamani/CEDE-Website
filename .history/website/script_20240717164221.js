@@ -1,0 +1,70 @@
+// Function to handle option selection
+function selectOption(element) {
+  const name = element.name;
+  document.querySelectorAll(`input[name="${name}"]`).forEach((input) => {
+    input.closest(".option").classList.remove("selected");
+  });
+
+  element.closest(".option").classList.add("selected");
+  document.getElementById("submit-button").disabled = false;
+}
+
+// Function to go back
+function goBack() {
+  window.location.href = "collectdata.html";
+}
+
+// Function to get recommendation based on user responses
+function getRecommendation(rules) {
+  const userResponses = {
+    muscle_comparison: document.querySelector('input[name="q1"]:checked')
+      ?.value,
+    session_comparison: document.querySelector('input[name="q2"]:checked')
+      ?.value,
+    group_comparison: document.querySelector('input[name="q3"]:checked')?.value,
+    perform_mvc: document.querySelector('input[name="q3a"]:checked')?.value,
+  };
+
+  const rule = rules.find(
+    (rule) =>
+      rule.muscle_comparison === userResponses.muscle_comparison &&
+      rule.session_comparison === userResponses.session_comparison &&
+      rule.group_comparison === userResponses.group_comparison &&
+      rule.perform_mvc === userResponses.perform_mvc
+  );
+
+  if (rule) {
+    localStorage.setItem("recommendation", rule.recommendation);
+    window.location.href = "recommendation.html";
+  } else {
+    alert("No recommendation found for the given responses.");
+  }
+}
+
+// Event listener for document load
+document.addEventListener("DOMContentLoaded", () => {
+  fetch("rules.json")
+    .then((response) => response.json())
+    .then((rules) => {
+      // Attach event listeners to form elements
+      document.querySelectorAll('input[name="q1"]').forEach((input) => {
+        input.addEventListener("change", () => selectOption(input));
+      });
+
+      document.querySelectorAll('input[name="q2"]').forEach((input) => {
+        input.addEventListener("change", () => selectOption(input));
+      });
+
+      document.querySelectorAll('input[name="q3"]').forEach((input) => {
+        input.addEventListener("change", () => selectOption(input));
+      });
+
+      document.querySelectorAll('input[name="q3a"]').forEach((input) => {
+        input.addEventListener("change", () => selectOption(input));
+      });
+
+      document.getElementById("submit-button").addEventListener("click", () => {
+        getRecommendation(rules);
+      });
+    });
+});
