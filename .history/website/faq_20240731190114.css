@@ -51,7 +51,7 @@ h2 {
 
 .accordion-button:not(.collapsed) {
   color: #007bff;
-  background-color: #e0f3ff;
+  background-color: lightblue;
 }
 
 .accordion-button {

@@ -1,4 +1,4 @@
-// import "constants.js";
+import "constants.js";
 let rules = []; // Ensure this is defined globally
 
 // Mapping for user-selected values to JSON values

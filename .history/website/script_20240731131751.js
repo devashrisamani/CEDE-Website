@@ -1,4 +1,3 @@
-// import "constants.js";
 let rules = []; // Ensure this is defined globally
 
 // Mapping for user-selected values to JSON values
@@ -18,7 +17,7 @@ const valueMapping = {
     "Within-group comparison",
   Yes: "Yes",
   "No (Change the color of #.1 and #.2 methods to grey and not allow them to click to it)":
-    "No (Change the color of #.1 and #.2 methods to grey and not allow them to click to it)",
+    "No",
 };
 
 // Function to handle option selection
@@ -52,10 +51,7 @@ function getRecommendation() {
   const q3Value = document
     .querySelector('input[name="q3"]:checked')
     ?.value.trim();
-  const q3aValue = document
-    .querySelector('input[name="q3a"]:checked')
-    ?.value.trim();
-
+  const q3aValue = document.querySelector('input[name="q3a"]:checked');
   console.log("q1 value:", q1Value);
   console.log("q2 value:", q2Value);
   console.log("q3 value:", q3Value);

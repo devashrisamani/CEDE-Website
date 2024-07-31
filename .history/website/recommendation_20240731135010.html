@@ -119,24 +119,6 @@
       .container {
         padding-bottom: 80px; /* to ensure the content does not hide behind the fixed button */
       }
-
-      .accordion-button:not(.collapsed) {
-        color: #007bff;
-        background-color: #e0f3ff; /* Updated to light blue color */
-      }
-
-      .accordion-button {
-        text-decoration: none;
-      }
-
-      .accordion-button:hover {
-        text-decoration: underline;
-      }
-
-      .accordion-body {
-        padding-left: 20px; /* Indent the text */
-        background-color: #f8f9fa; /* Match the accordion body background color */
-      }
     </style>
   </head>
   <body>
@@ -295,7 +277,7 @@
 
         // Example methods data
         const methodsData = {
-          "Experimental context 1: Amplitude comparison within a person and muscle, between conditions/ tasks (within a session*).":
+          "Experimental context 1: Amplitude comparison within a person and muscle, between conditions/tasks (within a session). *Without removing electrodes":
             {
               high: [
                 {
@@ -311,7 +293,7 @@
                 },
                 {
                   title:
-                    "Normalization to the peak or mean EMG amplitude during the task investigated. For comparisons between conditions (e.g., pre-post intervention in a single session) for a single task (e.g., running).",
+                    "Normalization to the peak or mean EMG amplitude during the task investigated. <em>For comparisons between conditions (e.g., pre-post intervention in a single session) for a single task (e.g., running).</em>",
                   content: "Additional information about this method.",
                 },
                 {
@@ -327,7 +309,7 @@
                 },
                 {
                   title:
-                    "Normalization to the peak or mean EMG amplitude during the task investigated. For comparisons between tasks (e.g., walking vs. running).",
+                    "Normalization to the peak or mean EMG amplitude during the task investigated. <em>For comparisons between tasks (e.g., walking vs. running).</em>",
                   content: "Additional information about this method.",
                 },
               ],
@@ -338,7 +320,7 @@
                 },
               ],
             },
-          "Experimental context 2: Amplitude comparison within a person and muscle, between sessions (i.e. re-application of electrodes).":
+          "Experimental context 2: Amplitude comparison within a person and muscle, between sessions (i.e. re-application of electrodes)":
             {
               high: [
                 {
@@ -396,6 +378,7 @@
                 },
               ],
             },
+
           "Extra pannel/page": {
             high: [
               {
@@ -432,26 +415,27 @@
           element.innerHTML = methods
             .map(
               (method, index) => `
-                <div class="accordion-item">
-                  <h2 class="accordion-header" id="${elementId}Heading${index}">
-                    <button
-                      class="accordion-button collapsed"
-                      type="button"
-                      data-bs-toggle="collapse"
-                      data-bs-target="#${elementId}Collapse${index}"
-                      aria-expanded="false"
-                      aria-controls="${elementId}Collapse${index}"
-                    >
-                      ${method.title}
-                    </button>
-                  </h2>
+                <div class="card">
+                  <div class="card-header" id="${elementId}Heading${index}">
+                    <h5 class="mb-0">
+                      <button
+                        class="btn btn-link collapsed"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#${elementId}Collapse${index}"
+                        aria-expanded="false"
+                        aria-controls="${elementId}Collapse${index}"
+                      >
+                        ${method.title}
+                      </button>
+                    </h5>
+                  </div>
                   <div
                     id="${elementId}Collapse${index}"
-                    class="accordion-collapse collapse"
+                    class="collapse"
                     aria-labelledby="${elementId}Heading${index}"
-                    data-bs-parent="#${elementId}"
+                    data-parent="#${elementId}"
                   >
-                    <div class="accordion-body">
+                    <div class="card-body">
                       ${method.content}
                     </div>
                   </div>

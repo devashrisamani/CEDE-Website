@@ -1,4 +1,3 @@
-// import "constants.js";
 let rules = []; // Ensure this is defined globally
 
 // Mapping for user-selected values to JSON values
@@ -18,7 +17,7 @@ const valueMapping = {
     "Within-group comparison",
   Yes: "Yes",
   "No (Change the color of #.1 and #.2 methods to grey and not allow them to click to it)":
-    "No (Change the color of #.1 and #.2 methods to grey and not allow them to click to it)",
+    "No",
 };
 
 // Function to handle option selection

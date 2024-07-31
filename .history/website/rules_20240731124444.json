@@ -4,63 +4,63 @@
     "session_comparison": "Within a session",
     "group_comparison": "Within-group comparison",
     "perform_mvc": "Yes",
-    "recommendation": "Experimental context 1: Amplitude comparison within a person and muscle, between conditions/ tasks (within a session*)."
+    "recommendation": "Experimental context 1: Amplitude comparison within a person and muscle, between conditions/ tasks (within a session*). *Without removing electrodes (1.1 - 1.6)"
   },
   {
     "muscle_comparison": "Within muscle",
     "session_comparison": "Within a session",
     "group_comparison": "Within-group comparison",
     "perform_mvc": "No (Change the color of #.1 and #.2 methods to grey and not allow them to click to it)",
-    "recommendation": "Experimental context 1: Amplitude comparison within a person and muscle, between conditions/ tasks (within a session*)."
+    "recommendation": "Experimental context 1: Amplitude comparison within a person and muscle, between conditions/ tasks (within a session*). *Without removing electrodes (1.1 - 1.6)"
   },
   {
     "muscle_comparison": "Within muscle",
     "session_comparison": "Within a session",
     "group_comparison": "Between-groups comparison",
     "perform_mvc": "Yes",
-    "recommendation": "Experimental context 3: Amplitude comparison between muscles during the same task (same muscle in different participants; or different muscles in the same participant)."
+    "recommendation": "Experimental context 3: Amplitude comparison between muscles during the same task (same muscle in different participants; or different muscles in the same participant ) (3.1 - 3.6)"
   },
   {
     "muscle_comparison": "Within muscle",
     "session_comparison": "Within a session",
     "group_comparison": "Between-groups comparison",
     "perform_mvc": "No (Change the color of #.1 and #.2 methods to grey and not allow them to click to it)",
-    "recommendation": "Experimental context 3: Amplitude comparison between muscles during the same task (same muscle in different participants; or different muscles in the same participant)."
+    "recommendation": "Experimental context 3: Amplitude comparison between muscles during the same task (same muscle in different participants; or different muscles in the same participant ) (3.1 - 3.6)"
   },
   {
     "muscle_comparison": "Within muscle",
     "session_comparison": "Within a session",
     "group_comparison": "Both",
     "perform_mvc": "Yes",
-    "recommendation": "Experimental context 3: Amplitude comparison between muscles during the same task (same muscle in different participants; or different muscles in the same participant)."
+    "recommendation": "Experimental context 3: Amplitude comparison between muscles during the same task (same muscle in different participants; or different muscles in the same participant ) (3.1 - 3.6)"
   },
   {
     "muscle_comparison": "Within muscle",
     "session_comparison": "Within a session",
     "group_comparison": "Both",
     "perform_mvc": "No (Change the color of #.1 and #.2 methods to grey and not allow them to click to it)",
-    "recommendation": "Experimental context 3: Amplitude comparison between muscles during the same task (same muscle in different participants; or different muscles in the same participant)."
+    "recommendation": "Experimental context 3: Amplitude comparison between muscles during the same task (same muscle in different participants; or different muscles in the same participant ) (3.1 - 3.6)"
   },
   {
     "muscle_comparison": "Within muscle",
     "session_comparison": "Between sessions",
     "group_comparison": "Within-group comparison",
     "perform_mvc": "Yes",
-    "recommendation": "Experimental context 2: Amplitude comparison within a person and muscle, between sessions (i.e. re-application of electrodes)."
+    "recommendation": "Experimental context 2: Amplitude comparison within a person and muscle, between sessions (i.e. re-application of electrodes). (2.1 - 2.6)"
   },
   {
     "muscle_comparison": "Within muscle",
     "session_comparison": "Between sessions",
     "group_comparison": "Within-group comparison",
     "perform_mvc": "No (Change the color of #.1 and #.2 methods to grey and not allow them to click to it)",
-    "recommendation": "Experimental context 2: Amplitude comparison within a person and muscle, between sessions (i.e. re-application of electrodes)."
+    "recommendation": "Experimental context 2: Amplitude comparison within a person and muscle, between sessions (i.e. re-application of electrodes). (2.1 - 2.6)"
   },
   {
     "muscle_comparison": "Within muscle",
     "session_comparison": "Between sessions",
     "group_comparison": "Between-groups comparison",
     "perform_mvc": "Yes",
-    "recommendation": "Experimental context 3: Amplitude comparison between muscles during the same task (same muscle in different participants; or different muscles in the same participant)."
+    "recommendation": "Experimental context 3: Amplitude comparison between muscles during the same task (same muscle in different participants; or different muscles in the same participant ) (3.1 - 3.6)"
   },
   {
     "muscle_comparison": "Within muscle",
@@ -74,7 +74,7 @@
     "session_comparison": "Between sessions",
     "group_comparison": "Both",
     "perform_mvc": "Yes",
-    "recommendation": "Experimental context 3: Amplitude comparison between muscles during the same task (same muscle in different participants; or different muscles in the same participant)."
+    "recommendation": "Experimental context 3: Amplitude comparison between muscles during the same task (same muscle in different participants; or different muscles in the same participant ) (3.1 - 3.6)"
   },
   {
     "muscle_comparison": "Within muscle",
@@ -88,7 +88,7 @@
     "session_comparison": "Both",
     "group_comparison": "Within-group comparison",
     "perform_mvc": "Yes",
-    "recommendation": "Experimental context 3: Amplitude comparison between muscles during the same task (same muscle in different participants; or different muscles in the same participant)."
+    "recommendation": "Experimental context 3: Amplitude comparison between muscles during the same task (same muscle in different participants; or different muscles in the same participant ) (3.1 - 3.6)"
   },
   {
     "muscle_comparison": "Within muscle",
@@ -102,7 +102,7 @@
     "session_comparison": "Both",
     "group_comparison": "Between-groups comparison",
     "perform_mvc": "Yes",
-    "recommendation": "Experimental context 3: Amplitude comparison between muscles during the same task (same muscle in different participants; or different muscles in the same participant)."
+    "recommendation": "Experimental context 3: Amplitude comparison between muscles during the same task (same muscle in different participants; or different muscles in the same participant ) (3.1 - 3.6)"
   },
   {
     "muscle_comparison": "Within muscle",
@@ -116,7 +116,7 @@
     "session_comparison": "Both",
     "group_comparison": "Both",
     "perform_mvc": "Yes",
-    "recommendation": "Experimental context 3: Amplitude comparison between muscles during the same task (same muscle in different participants; or different muscles in the same participant)."
+    "recommendation": "Experimental context 3: Amplitude comparison between muscles during the same task (same muscle in different participants; or different muscles in the same participant ) (3.1 - 3.6)"
   },
   {
     "muscle_comparison": "Within muscle",
@@ -130,7 +130,7 @@
     "session_comparison": "Within a session",
     "group_comparison": "Within-group comparison",
     "perform_mvc": "Yes",
-    "recommendation": "Experimental context 3: Amplitude comparison between muscles during the same task (same muscle in different participants; or different muscles in the same participant)."
+    "recommendation": "Experimental context 3: Amplitude comparison between muscles during the same task (same muscle in different participants; or different muscles in the same participant ) (3.1 - 3.6)"
   },
   {
     "muscle_comparison": "Between muscles",
@@ -144,7 +144,7 @@
     "session_comparison": "Within a session",
     "group_comparison": "Between-groups comparison",
     "perform_mvc": "Yes",
-    "recommendation": "Experimental context 3: Amplitude comparison between muscles during the same task (same muscle in different participants; or different muscles in the same participant)."
+    "recommendation": "Experimental context 3: Amplitude comparison between muscles during the same task (same muscle in different participants; or different muscles in the same participant ) (3.1 - 3.6)"
   },
   {
     "muscle_comparison": "Between muscles",
@@ -158,7 +158,7 @@
     "session_comparison": "Within a session",
     "group_comparison": "Both",
     "perform_mvc": "Yes",
-    "recommendation": "Experimental context 3: Amplitude comparison between muscles during the same task (same muscle in different participants; or different muscles in the same participant)."
+    "recommendation": "Experimental context 3: Amplitude comparison between muscles during the same task (same muscle in different participants; or different muscles in the same participant ) (3.1 - 3.6)"
   },
   {
     "muscle_comparison": "Between muscles",
@@ -172,7 +172,7 @@
     "session_comparison": "Between sessions",
     "group_comparison": "Within-group comparison",
     "perform_mvc": "Yes",
-    "recommendation": "Experimental context 3: Amplitude comparison between muscles during the same task (same muscle in different participants; or different muscles in the same participant)."
+    "recommendation": "Experimental context 3: Amplitude comparison between muscles during the same task (same muscle in different participants; or different muscles in the same participant ) (3.1 - 3.6)"
   },
   {
     "muscle_comparison": "Between muscles",
@@ -186,7 +186,7 @@
     "session_comparison": "Between sessions",
     "group_comparison": "Between-groups comparison",
     "perform_mvc": "Yes",
-    "recommendation": "Experimental context 3: Amplitude comparison between muscles during the same task (same muscle in different participants; or different muscles in the same participant)."
+    "recommendation": "Experimental context 3: Amplitude comparison between muscles during the same task (same muscle in different participants; or different muscles in the same participant ) (3.1 - 3.6)"
   },
   {
     "muscle_comparison": "Between muscles",
@@ -200,7 +200,7 @@
     "session_comparison": "Between sessions",
     "group_comparison": "Both",
     "perform_mvc": "Yes",
-    "recommendation": "Experimental context 3: Amplitude comparison between muscles during the same task (same muscle in different participants; or different muscles in the same participant)."
+    "recommendation": "Experimental context 3: Amplitude comparison between muscles during the same task (same muscle in different participants; or different muscles in the same participant ) (3.1 - 3.6)"
   },
   {
     "muscle_comparison": "Between muscles",
@@ -214,7 +214,7 @@
     "session_comparison": "Both",
     "group_comparison": "Within-group comparison",
     "perform_mvc": "Yes",
-    "recommendation": "Experimental context 3: Amplitude comparison between muscles during the same task (same muscle in different participants; or different muscles in the same participant)."
+    "recommendation": "Experimental context 3: Amplitude comparison between muscles during the same task (same muscle in different participants; or different muscles in the same participant ) (3.1 - 3.6)"
   },
   {
     "muscle_comparison": "Between muscles",
@@ -228,7 +228,7 @@
     "session_comparison": "Both",
     "group_comparison": "Between-groups comparison",
     "perform_mvc": "Yes",
-    "recommendation": "Experimental context 3: Amplitude comparison between muscles during the same task (same muscle in different participants; or different muscles in the same participant)."
+    "recommendation": "Experimental context 3: Amplitude comparison between muscles during the same task (same muscle in different participants; or different muscles in the same participant ) (3.1 - 3.6)"
   },
   {
     "muscle_comparison": "Between muscles",
@@ -242,7 +242,7 @@
     "session_comparison": "Both",
     "group_comparison": "Both",
     "perform_mvc": "Yes",
-    "recommendation": "Experimental context 3: Amplitude comparison between muscles during the same task (same muscle in different participants; or different muscles in the same participant)."
+    "recommendation": "Experimental context 3: Amplitude comparison between muscles during the same task (same muscle in different participants; or different muscles in the same participant ) (3.1 - 3.6)"
   },
   {
     "muscle_comparison": "Between muscles",
@@ -256,49 +256,49 @@
     "session_comparison": "Within a session",
     "group_comparison": "Within-group comparison",
     "perform_mvc": "Yes",
-    "recommendation": "Experimental context 3: Amplitude comparison between muscles during the same task (same muscle in different participants; or different muscles in the same participant)."
+    "recommendation": "Experimental context 3: Amplitude comparison between muscles during the same task (same muscle in different participants; or different muscles in the same participant ) (3.1 - 3.6)"
   },
   {
     "muscle_comparison": "Both",
     "session_comparison": "Within a session",
     "group_comparison": "Within-group comparison",
     "perform_mvc": "No (Change the color of #.1 and #.2 methods to grey and not allow them to click to it)",
-    "recommendation": "Experimental context 3: Amplitude comparison between muscles during the same task (same muscle in different participants; or different muscles in the same participant)."
+    "recommendation": "Experimental context 3: Amplitude comparison between muscles during the same task (same muscle in different participants; or different muscles in the same participant ) (3.1 - 3.6)"
   },
   {
     "muscle_comparison": "Both",
     "session_comparison": "Within a session",
     "group_comparison": "Between-groups comparison",
     "perform_mvc": "Yes",
-    "recommendation": "Experimental context 3: Amplitude comparison between muscles during the same task (same muscle in different participants; or different muscles in the same participant)."
+    "recommendation": "Experimental context 3: Amplitude comparison between muscles during the same task (same muscle in different participants; or different muscles in the same participant ) (3.1 - 3.6)"
   },
   {
     "muscle_comparison": "Both",
     "session_comparison": "Within a session",
     "group_comparison": "Between-groups comparison",
     "perform_mvc": "No (Change the color of #.1 and #.2 methods to grey and not allow them to click to it)",
-    "recommendation": "Experimental context 3: Amplitude comparison between muscles during the same task (same muscle in different participants; or different muscles in the same participant)."
+    "recommendation": "Experimental context 3: Amplitude comparison between muscles during the same task (same muscle in different participants; or different muscles in the same participant ) (3.1 - 3.6)"
   },
   {
     "muscle_comparison": "Both",
     "session_comparison": "Within a session",
     "group_comparison": "Both",
     "perform_mvc": "Yes",
-    "recommendation": "Experimental context 3: Amplitude comparison between muscles during the same task (same muscle in different participants; or different muscles in the same participant)."
+    "recommendation": "Experimental context 3: Amplitude comparison between muscles during the same task (same muscle in different participants; or different muscles in the same participant ) (3.1 - 3.6)"
   },
   {
     "muscle_comparison": "Both",
     "session_comparison": "Within a session",
     "group_comparison": "Both",
     "perform_mvc": "No (Change the color of #.1 and #.2 methods to grey and not allow them to click to it)",
-    "recommendation": "Experimental context 3: Amplitude comparison between muscles during the same task (same muscle in different participants; or different muscles in the same participant)."
+    "recommendation": "Experimental context 3: Amplitude comparison between muscles during the same task (same muscle in different participants; or different muscles in the same participant ) (3.1 - 3.6)"
   },
   {
     "muscle_comparison": "Both",
     "session_comparison": "Between sessions",
     "group_comparison": "Within-group comparison",
     "perform_mvc": "Yes",
-    "recommendation": "Experimental context 3: Amplitude comparison between muscles during the same task (same muscle in different participants; or different muscles in the same participant)."
+    "recommendation": "Experimental context 3: Amplitude comparison between muscles during the same task (same muscle in different participants; or different muscles in the same participant ) (3.1 - 3.6)"
   },
   {
     "muscle_comparison": "Both",
@@ -312,7 +312,7 @@
     "session_comparison": "Between sessions",
     "group_comparison": "Between-groups comparison",
     "perform_mvc": "Yes",
-    "recommendation": "Experimental context 3: Amplitude comparison between muscles during the same task (same muscle in different participants; or different muscles in the same participant)."
+    "recommendation": "Experimental context 3: Amplitude comparison between muscles during the same task (same muscle in different participants; or different muscles in the same participant ) (3.1 - 3.6)"
   },
   {
     "muscle_comparison": "Both",
@@ -326,7 +326,7 @@
     "session_comparison": "Between sessions",
     "group_comparison": "Both",
     "perform_mvc": "Yes",
-    "recommendation": "Experimental context 3: Amplitude comparison between muscles during the same task (same muscle in different participants; or different muscles in the same participant)."
+    "recommendation": "Experimental context 3: Amplitude comparison between muscles during the same task (same muscle in different participants; or different muscles in the same participant ) (3.1 - 3.6)"
   },
   {
     "muscle_comparison": "Both",
@@ -340,7 +340,7 @@
     "session_comparison": "Both",
     "group_comparison": "Within-group comparison",
     "perform_mvc": "Yes",
-    "recommendation": "Experimental context 3: Amplitude comparison between muscles during the same task (same muscle in different participants; or different muscles in the same participant)."
+    "recommendation": "Experimental context 3: Amplitude comparison between muscles during the same task (same muscle in different participants; or different muscles in the same participant ) (3.1 - 3.6)"
   },
   {
     "muscle_comparison": "Both",
@@ -354,7 +354,7 @@
     "session_comparison": "Both",
     "group_comparison": "Between-groups comparison",
     "perform_mvc": "Yes",
-    "recommendation": "Experimental context 3: Amplitude comparison between muscles during the same task (same muscle in different participants; or different muscles in the same participant)."
+    "recommendation": "Experimental context 3: Amplitude comparison between muscles during the same task (same muscle in different participants; or different muscles in the same participant ) (3.1 - 3.6)"
   },
   {
     "muscle_comparison": "Both",
@@ -368,11 +368,11 @@
     "session_comparison": "Both",
     "group_comparison": "Both",
     "perform_mvc": "Yes",
-    "recommendation": "Experimental context 3: Amplitude comparison between muscles during the same task (same muscle in different participants; or different muscles in the same participant)."
+    "recommendation": "Experimental context 3: Amplitude comparison between muscles during the same task (same muscle in different participants; or different muscles in the same participant ) (3.1 - 3.6)"
   },
   {
     "muscle_comparison": "Both",
-    "session_comparison": "Both",
+    "session_comparison": "oth",
     "group_comparison": "Both",
     "perform_mvc": "No (Change the color of #.1 and #.2 methods to grey and not allow them to click to it)",
     "recommendation": "Extra pannel/page"

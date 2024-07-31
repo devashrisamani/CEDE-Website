@@ -53,7 +53,7 @@
     "session_comparison": "Between sessions",
     "group_comparison": "Within-group comparison",
     "perform_mvc": "No (Change the color of #.1 and #.2 methods to grey and not allow them to click to it)",
-    "recommendation": "Experimental context 2: Amplitude comparison within a person and muscle, between sessions (i.e. re-application of electrodes)."
+    "recommendation": "Experimental context 2: Amplitude comparison within a person and muscle, between sessions (i.e. re-application of electrodes). "
   },
   {
     "muscle_comparison": "Within muscle",
@@ -368,7 +368,7 @@
     "session_comparison": "Both",
     "group_comparison": "Both",
     "perform_mvc": "Yes",
-    "recommendation": "Experimental context 3: Amplitude comparison between muscles during the same task (same muscle in different participants; or different muscles in the same participant)."
+    "recommendation": "Experimental context 3: Amplitude comparison between muscles during the same task (same muscle in different participants; or different muscles in the same participant.)"
   },
   {
     "muscle_comparison": "Both",

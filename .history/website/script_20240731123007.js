@@ -1,4 +1,3 @@
-// import "constants.js";
 let rules = []; // Ensure this is defined globally
 
 // Mapping for user-selected values to JSON values
@@ -17,8 +16,7 @@ const valueMapping = {
   "Comparisons within a participant group (e.g. knee extension at 10% and 50% of MVC in healthy individuals)":
     "Within-group comparison",
   Yes: "Yes",
-  "No (Change the color of #.1 and #.2 methods to grey and not allow them to click to it)":
-    "No (Change the color of #.1 and #.2 methods to grey and not allow them to click to it)",
+  NO: "No",
 };
 
 // Function to handle option selection
@@ -79,14 +77,6 @@ function getRecommendation() {
     group_comparison: mappedQ3,
     perform_mvc: mappedQ3a,
   };
-
-  // const userResponses = {
-  //   muscle_comparison: "Between muscles",
-  //   session_comparison: "Between sessions",
-  //   group_comparison: "Between-groups comparison",
-  //   perform_mvc:
-  //     "No (Change the color of #.1 and #.2 methods to grey and not allow them to click to it)",
-  // };
 
   console.log("User responses:", userResponses);
   console.log("Rules available:", rules);

@@ -1,10 +1,9 @@
-// import "constants.js";
+import constants.js;
 let rules = []; // Ensure this is defined globally
 
 // Mapping for user-selected values to JSON values
 const valueMapping = {
-  "Comparisons between muscles (e.g. vastus lateralis vs. vastus medialis during knee extension task)":
-    "Between muscles",
+  Comparisons_between_muscles: "Between muscles",
   "Comparisons within a muscle (e.g. vastus lateralis pre and post intervention)":
     "Within muscle",
   Both: "Both",

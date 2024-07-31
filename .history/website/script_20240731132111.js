@@ -1,4 +1,3 @@
-// import "constants.js";
 let rules = []; // Ensure this is defined globally
 
 // Mapping for user-selected values to JSON values
@@ -52,9 +51,7 @@ function getRecommendation() {
   const q3Value = document
     .querySelector('input[name="q3"]:checked')
     ?.value.trim();
-  const q3aValue = document
-    .querySelector('input[name="q3a"]:checked')
-    ?.value.trim();
+  const q3aValue = document.querySelector('input[name="q3a"]:checked')?.value;
 
   console.log("q1 value:", q1Value);
   console.log("q2 value:", q2Value);
