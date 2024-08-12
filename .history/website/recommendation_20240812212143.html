@@ -122,15 +122,36 @@
 
       .accordion-button:not(.collapsed) {
         color: #007bff;
-        background-color: #e0f3ff; /* Updated to light blue color */
+        background-color: #e0f3ff; /* Light blue background when active */
+      }
+
+      .accordion-button.collapsed:hover {
+        text-decoration: underline;
       }
 
       .accordion-button {
-        text-decoration: none;
+        background-color: #f8f9fa;
+        color: #007bff;
+        font-weight: bold;
+      }
+
+      .accordion-button:hover {
+        text-decoration: underline;
       }
 
       .accordion-body {
         padding-left: 40px; /* Indent the text */
+        background-color: #f8f9fa; /* Match the accordion body background color */
+      }
+
+      .accordion-body {
+        padding-left: 20px; /* Indent the text */
+        background-color: #f8f9fa; /* Match the accordion body background color */
+      }
+
+      .accordion-item {
+        border: 1px solid #ddd; /* Add a light grey border around each accordion item */
+        margin-bottom: 5px;
       }
     </style>
   </head>
@@ -427,33 +448,31 @@
           element.innerHTML = methods
             .map(
               (method, index) => `
-        <div class="accordion-item">
-          <h2 class="accordion-header" id="${elementId}Heading${index}">
-            <button
-              class="accordion-button collapsed"
-              type="button"
-              data-bs-toggle="collapse"
-              data-bs-target="#${elementId}Collapse${index}"
-              aria-expanded="false"
-              aria-controls="${elementId}Collapse${index}"
-            >
-              ${method.title}
-            </button>
-          </h2>
-          <div
-            id="${elementId}Collapse${index}"
-            class="accordion-collapse collapse"
-            aria-labelledby="${elementId}Heading${index}"
-            data-bs-parent="#${elementId}"
-          >
-            <div class="accordion-body">
-              <ul>
-                <li>${method.content}</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      `
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="${elementId}Heading${index}">
+                    <button
+                      class="accordion-button collapsed"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#${elementId}Collapse${index}"
+                      aria-expanded="false"
+                      aria-controls="${elementId}Collapse${index}"
+                    >
+                      ${method.title}
+                    </button>
+                  </h2>
+                  <div
+                    id="${elementId}Collapse${index}"
+                    class="accordion-collapse collapse"
+                    aria-labelledby="${elementId}Heading${index}"
+                    data-bs-parent="#${elementId}"
+                  >
+                    <div class="accordion-body">
+                      ${method.content}
+                    </div>
+                  </div>
+                </div>
+              `
             )
             .join("");
         }

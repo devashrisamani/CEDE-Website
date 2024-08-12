@@ -129,8 +129,13 @@
         text-decoration: none;
       }
 
+      .accordion-button:hover {
+        text-decoration: underline;
+      }
+
       .accordion-body {
-        padding-left: 40px; /* Indent the text */
+        padding-left: 20px; /* Indent the text */
+        background-color: #f8f9fa; /* Match the accordion body background color */
       }
     </style>
   </head>
@@ -297,39 +302,45 @@
                   title:
                     "Normalization to the maximum voluntary contraction (MVC) in the same task/context as the task of interest (with matched contraction type*, muscle length/joint angle, and/or velocity) *isometric; concentric; eccentric.",
                   content:
-                    'Normalizing to maximum voluntary contraction (MVC) provides a relative value useful to compare the magnitude of muscle activity in different tasks or conditions. This represents the activity as a proportion of the maximum capacity of the muscle, as long as the normalization contraction is collected in the same position, velocity, and contraction types as the task of interest. <a href="method.html">See More</a>',
+                    'Normalizing to maximum voluntary contraction (MVC) provides a relative value useful to compare the magnitude of muscle activity in different tasks or conditions. This represents the activity as a proportion of the maximum capacity of the muscle, as long as the normalization contraction is collected in the same position, velocity, and contraction types as the task of interest. <a href="method.html?method=1.1">See More</a>',
                 },
                 {
                   title:
                     "Normalization to a standardized isometric maximum voluntary contraction (MVC) when it is not possible to match all aspects of the task of interest (e.g., multiple tasks or muscles investigated, complex task).",
-                  content: "Additional information about this method.",
+                  content:
+                    'Normalization to a standardized isometric maximum voluntary contraction (MVC) provides a relative value useful to compare the EMG amplitude of different muscles within a person or the same muscle between participants. This method is less ideal than “normalization to the MVC in the same task/context as the task of interest” because it DOES NOT control for physiological and anatomical issues (e.g., contraction type, muscle architecture, electrode placement, etc.). <a href="method.html?method=1.2">See More</a>',
                 },
                 {
                   title:
                     "Normalization to the peak or mean EMG amplitude during the task investigated. For comparisons between conditions (e.g., pre-post intervention in a single session) for a single task (e.g., running).",
-                  content: "Additional information about this method.",
+                  content:
+                    'Normalization to the peak or mean during task is not appropriate for comparison between sessions. By normalizing to the peak/mean during the task investigated, data in each session is scaled to 100%, which will remove any differences in amplitude between sessions. <a href="method.html?method=1.3">See More</a>',
                 },
                 {
                   title: "Non-normalized EMG amplitude.",
-                  content: "Additional information about this method.",
+                  content:
+                    'Non-normalized EMG amplitude should not be used to compare the amplitude of the EMG signal between sessions. Differences in electrode placement/ orientation relative to the muscle between sessions will influence EMG amplitude, in a manner that is not possible to quantify. This method might be appropriate in some contexts when using high-density surface EMG recordings. <a href="method.html?method=1.4">See More</a>',
                 },
               ],
               caution: [
                 {
                   title:
                     "Normalization to a standardized submaximal task (isometric/dynamic) that has similar characteristics to the task of interest.",
-                  content: "Additional information about this method.",
+                  content:
+                    'Normalization to a standardized submaximal task can be problematic when trying to compare the EMG amplitude between sessions because when a task is performed at submaximal levels, it might be performed differently between sessions, and the physiological interpretation of the reference value is unclear (e.g., it could be 10% or 100% of MVC). <a href="method.html?method=1.5">See More</a>',
                 },
                 {
                   title:
                     "Normalization to the peak or mean EMG amplitude during the task investigated. For comparisons between tasks (e.g., walking vs. running).",
-                  content: "Additional information about this method.",
+                  content:
+                    'This method is generally not appropriate for comparison between sessions, as it removes differences in EMG amplitude. <a href="method.html?method=1.6">See More</a>',
                 },
               ],
               low: [
                 {
                   title: "Normalized to the maximal M-wave amplitude.",
-                  content: "Additional information about this method.",
+                  content:
+                    'Normalization to the maximal M-wave amplitude is typically used for normalizing evoked potentials rather than voluntary contractions. <a href="method.html?method=1.7">See More</a>',
                 },
               ],
             },
@@ -340,13 +351,13 @@
                   title:
                     "Normalization to the peak or mean value of the maximum voluntary contraction (MVC) in the same task/context as the task of interest (with matched contraction type*, muscle length/joint angle, and/or velocity) *isometric; concentric; eccentric",
                   content:
-                    "Normalizing to maximum voluntary contraction (MVC) provides a relative value useful to compare the magnitude of muscle activity between sessions. Between-session repeatability is likely to be achievable as long as the MVC performance is consistent across sessions. If the MVC effort varies between sessions (e.g., because of training, sleep, and nutrition), values will be normalized to different reference values, and you will be comparing apples with oranges.",
+                    'Normalizing to maximum voluntary contraction (MVC) provides a relative value useful to compare the magnitude of muscle activity between sessions. Between-session repeatability is likely to be achievable as long as the MVC performance is consistent across sessions. If the MVC effort varies between sessions (e.g., because of training, sleep, and nutrition), values will be normalized to different reference values, and you will be comparing apples with oranges. <a href="method.html?method=2.1">See More</a>',
                 },
                 {
                   title:
                     "Normalization to a standardized isometric maximum voluntary contraction (MVC) when it is not possible to match all aspects of the task of interest (e.g., multiple tasks or muscles investigated, complex task).",
                   content:
-                    "Normalization to a standardized isometric maximum voluntary contraction (MVC) provides a relative value useful to compare the magnitude of muscle activity between sessions. Between-session repeatability is likely to be achievable as long as the MVC performance is consistent across sessions. If the MVC effort varies between sessions (e.g., because of training, sleep, and nutrition), values will be normalized to different reference values, and you will be comparing apples with oranges.",
+                    'Normalization to a standardized isometric maximum voluntary contraction (MVC) provides a relative value useful to compare the magnitude of muscle activity between sessions. Between-session repeatability is likely to be achievable as long as the MVC performance is consistent across sessions. <a href="method.html?method=2.2">See More</a>',
                 },
               ],
               caution: [
@@ -354,12 +365,12 @@
                   title:
                     "Normalization to a standardized submaximal task (isometric/ dynamic) that has similar characteristics to the task of interest.",
                   content:
-                    "Normalization to a standardized submaximal task can be problematic when trying to compare the EMG amplitude between sessions because when a task is performed at submaximal levels, it might be performed differently between sessions, and the physiological interpretation of the reference value is unclear (e.g., it could be 10% or 100% of MVC).",
+                    'Normalization to a standardized submaximal task can be problematic when trying to compare the EMG amplitude between sessions because when a task is performed at submaximal levels, it might be performed differently between sessions, and the physiological interpretation of the reference value is unclear. <a href="method.html?method=2.3">See More</a>',
                 },
                 {
                   title: "Non-normalized EMG amplitude",
                   content:
-                    "Non-normalized EMG amplitude should not be used to compare the amplitude of the EMG signal between sessions. Differences in electrode placement/ orientation relative to the muscle between sessions will influence EMG amplitude, in a manner that is not possible to quantify. This method might be appropriate in some contexts when using high-density surface EMG recordings (see “General considerations for normalization”). During MVC efforts (as the task of interest), it might be the only option to interpret changes in EMG amplitude between sessions, because other normalization methods (such as normalization to MVC) would remove any difference. If an MVC effort cannot be performed reliably, this method could be considered with consideration of the cautions for interpretation.",
+                    'Non-normalized EMG amplitude should not be used to compare the amplitude of the EMG signal between sessions. Differences in electrode placement/ orientation relative to the muscle between sessions will influence EMG amplitude, in a manner that is not possible to quantify. <a href="method.html?method=2.4">See More</a>',
                 },
               ],
               low: [
@@ -367,12 +378,12 @@
                   title:
                     "Normalization to the peak or mean EMG amplitude during the task investigated.",
                   content:
-                    "Normalization to the peak or mean during task is not appropriate for comparison between sessions. By normalizing to the peak/mean during the task investigated, data in each session is scaled to 100%, which will remove any differences in amplitude between sessions.",
+                    'Normalization to the peak or mean during task is not appropriate for comparison between sessions. By normalizing to the peak/mean during the task investigated, data in each session is scaled to 100%, which will remove any differences in amplitude between sessions. <a href="method.html?method=2.5">See More</a>',
                 },
                 {
                   title: "Normalized to the maximal M-wave amplitude.",
                   content:
-                    "Generally, normalization to the maximal M-wave amplitude is only used for normalization of evoked potentials (i.e., motor evoked potentials (MEP) or Hoffman reflex (H-reflex) / <alternative: hyperlink on definitions>.",
+                    'Generally, normalization to the maximal M-wave amplitude is only used for normalization of evoked potentials (i.e., motor evoked potentials (MEP) or Hoffman reflex (H-reflex)). <a href="method.html?method=2.6">See More</a>',
                 },
               ],
             },
@@ -383,20 +394,20 @@
                   title:
                     "Normalization to the maximum voluntary contraction (MVC) in the same task/context as the task of interest (with matched contraction type*, muscle length/joint angle, and/or velocity) *isometric; concentric; eccentric",
                   content:
-                    "Normalization to the maximum voluntary contraction (MVC) provides a relative value that can be related to the maximal activation of each muscle, and therefore allows for comparison between muscles (within a person) or within a muscle (between participants). This method is valid also for between-session comparisons, as long as the MVC amplitude does not vary between sessions.",
+                    'Normalization to the maximum voluntary contraction (MVC) provides a relative value that can be related to the maximal activation of each muscle, and therefore allows for comparison between muscles (within a person) or within a muscle (between participants). This method is valid also for between-session comparisons, as long as the MVC amplitude does not vary between sessions. <a href="method.html?method=3.1">See More</a>',
                 },
                 {
                   title:
                     "Normalization to a standardized isometric maximum voluntary contraction (MVC) when it is not possible to match all aspects of the task of interest (e.g., multiple tasks or muscles investigated, complex task).",
                   content:
-                    "Normalization to a standardized isometric maximum voluntary contraction (MVC) provides a relative value useful to compare the EMG amplitude of different muscles within a person or the same muscle between participants. This method is less ideal than “normalization to the MVC in the same task/context as the task of interest” because it DOES NOT control for physiological and anatomical issues (e.g., contraction type, muscle architecture, electrode placement, etc.).",
+                    'Normalization to a standardized isometric maximum voluntary contraction (MVC) provides a relative value useful to compare the EMG amplitude of different muscles within a person or the same muscle between participants. This method is less ideal than “normalization to the MVC in the same task/context as the task of interest” because it DOES NOT control for physiological and anatomical issues. <a href="method.html?method=3.2">See More</a>',
                 },
               ],
               caution: [
                 {
                   title: "Normalized to the maximal M-wave amplitude.",
                   content:
-                    "Generally, normalization to the maximal M-wave amplitude is only used for normalization of evoked potentials (i.e., motor evoked potentials (MEP) or Hoffman reflex (H-reflex)).",
+                    'Generally, normalization to the maximal M-wave amplitude is only used for normalization of evoked potentials (i.e., motor evoked potentials (MEP) or Hoffman reflex (H-reflex)). <a href="method.html?method=3.3">See More</a>',
                 },
               ],
               low: [
@@ -404,22 +415,21 @@
                   title:
                     "Normalization to peak or mean of a standardized submaximal task (isometric/ dynamic) that has similar characteristics to the task of interest.",
                   content:
-                    "Normalization to a standardized submaximal task should not be used to compare the amplitude of the EMG signal between muscles or participants. The contribution of each muscle to a submaximal task is unlikely to be equivalent between muscles (e.g., deltoid vs supraspinatus during shoulder abduction) or groups (e.g., deltoid muscle between healthy pain-free individuals and participants with shoulder replacement; or males vs females with different relative weights of their arms), thus the reference value for each muscle will not be standardized, and therefore, it is not possible to accurately interpret the comparison.",
+                    'Normalization to a standardized submaximal task should not be used to compare the amplitude of the EMG signal between muscles or participants. <a href="method.html?method=3.4">See More</a>',
                 },
                 {
                   title:
                     "Normalization to the peak or mean EMG amplitude during the task investigated.",
                   content:
-                    "Normalization to the peak or mean EMG amplitude during the task is not a valid method to compare between muscles or participants, because differences in EMG amplitude between muscles are intentionally removed by the normalization method. It is not valid for between-session comparisons.",
+                    'Normalization to the peak or mean EMG amplitude during the task is not a valid method to compare between muscles or participants, because differences in EMG amplitude between muscles are intentionally removed by the normalization method. <a href="method.html?method=3.5">See More</a>',
                 },
                 {
                   title: "Non-normalized EMG amplitude.",
                   content:
-                    "Non-normalized EMG amplitude should not be used to compare the amplitude of the EMG signal between muscles or participants, because electrode and anatomical issues cannot be perfectly matched or controlled. For example, orientation relative to the muscle fibers, anatomical differences (such as the thickness of subcutaneous tissue) or muscle architectural characteristics (such as fiber types, or fiber cross-sectional area) might lead to systematic biases when comparing muscle amplitude between muscles. This method should only be considered to increase the confidence of the interpretation of another method.",
+                    'Non-normalized EMG amplitude should not be used to compare the amplitude of the EMG signal between muscles or participants. <a href="method.html?method=3.6">See More</a>',
                 },
               ],
             },
-          // Add other experimental contexts here if needed
         };
 
         function updateMethods(methods, elementId) {
@@ -427,33 +437,31 @@
           element.innerHTML = methods
             .map(
               (method, index) => `
-        <div class="accordion-item">
-          <h2 class="accordion-header" id="${elementId}Heading${index}">
-            <button
-              class="accordion-button collapsed"
-              type="button"
-              data-bs-toggle="collapse"
-              data-bs-target="#${elementId}Collapse${index}"
-              aria-expanded="false"
-              aria-controls="${elementId}Collapse${index}"
-            >
-              ${method.title}
-            </button>
-          </h2>
-          <div
-            id="${elementId}Collapse${index}"
-            class="accordion-collapse collapse"
-            aria-labelledby="${elementId}Heading${index}"
-            data-bs-parent="#${elementId}"
-          >
-            <div class="accordion-body">
-              <ul>
-                <li>${method.content}</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      `
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="${elementId}Heading${index}">
+                    <button
+                      class="accordion-button collapsed"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#${elementId}Collapse${index}"
+                      aria-expanded="false"
+                      aria-controls="${elementId}Collapse${index}"
+                    >
+                      ${method.title}
+                    </button>
+                  </h2>
+                  <div
+                    id="${elementId}Collapse${index}"
+                    class="accordion-collapse collapse"
+                    aria-labelledby="${elementId}Heading${index}"
+                    data-bs-parent="#${elementId}"
+                  >
+                    <div class="accordion-body">
+                      ${method.content}
+                    </div>
+                  </div>
+                </div>
+              `
             )
             .join("");
         }
