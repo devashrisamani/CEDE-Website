@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CEDE Decision Tree</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="inttool.css" />
+  </head>
+  <body>
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="index.html">CEDE</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNavAltMarkup"
+          aria-controls="navbarNavAltMarkup"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div
+          class="collapse navbar-collapse justify-content-end"
+          id="navbarNavAltMarkup"
+        >
+          <div class="navbar-nav">
+            <a class="nav-link" href="index.html">Home</a>
+            <div class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                id="matrixSelectionDropdown"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Matrix Selection
+              </a>
+              <ul
+                class="dropdown-menu"
+                aria-labelledby="matrixSelectionDropdown"
+              >
+                <li>
+                  <a class="dropdown-item" href="amplitude.html"
+                    >Amplitude Normalization</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#">Electrode Selection</a>
+                </li>
+                <li><a class="dropdown-item" href="#">Terminology</a></li>
+                <li>
+                  <a class="dropdown-item" href="#"
+                    >High-density surface electromyograph</a
+                  >
+                </li>
+                <li><a class="dropdown-item" href="#">Single Motor Unit</a></li>
+              </ul>
+            </div>
+            <a class="nav-link" href="faq.html">FAQs</a>
+            <a class="nav-link" href="#">Glossary</a>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container mt-5 px-5">
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item">
+            <a href="index.html">Matrix Selection</a>
+          </li>
+          <li class="breadcrumb-item">
+            <a href="amplitude.html">Amplitude Normalization</a>
+          </li>
+          <li class="breadcrumb-item active" aria-current="page">
+            Interactive Tool
+          </li>
+        </ol>
+      </nav>
+      <h2 class="mb-4">Amplitude Normalization</h2>
+      <p class="lead">What would you like to do?</p>
+      <div class="options-container">
+        <div class="option" onclick="window.location.href='collectdata.html'">
+          <span>Collect data</span>
+        </div>
+        <div class="option" onclick="selectOption('interpret-data')">
+          <span>Interpret data I already have</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
+
+and this is the json file [ { "muscle_comparison": "Within muscle",
+"session_comparison": "Within a session", "group_comparison": "Within-group
+comparison", "perform_mvc": "Yes", "recommendation": "Experimental context 1:
+Amplitude comparison within a person and muscle, between conditions/ tasks
+(within a session*)." }, { "muscle_comparison": "Within muscle",
+"session_comparison": "Within a session", "group_comparison": "Within-group
+comparison", "perform_mvc": "No (Change the color of #.1 and #.2 methods to grey
+and not allow them to click to it)", "recommendation": "Experimental context 1:
+Amplitude comparison within a person and muscle, between conditions/ tasks
+(within a session*)." }, { "muscle_comparison": "Within muscle",
+"session_comparison": "Within a session", "group_comparison": "Between-groups
+comparison", "perform_mvc": "Yes", "recommendation": "Experimental context 3:
+Amplitude comparison between muscles during the same task (same muscle in
+different participants; or different muscles in the same participant)." }, {
+"muscle_comparison": "Within muscle", "session_comparison": "Within a session",
+"group_comparison": "Between-groups comparison", "perform_mvc": "No (Change the
+color of #.1 and #.2 methods to grey and not allow them to click to it)",
+"recommendation": "Experimental context 3: Amplitude comparison between muscles
+during the same task (same muscle in different participants; or different
+muscles in the same participant)." }, { "muscle_comparison": "Within muscle",
+"session_comparison": "Within a session", "group_comparison": "Both",
+"perform_mvc": "Yes", "recommendation": "Experimental context 3: Amplitude
+comparison between muscles during the same task (same muscle in different
+participants; or different muscles in the same participant)." }, {
+"muscle_comparison": "Within muscle", "session_comparison": "Within a session",
+"group_comparison": "Both", "perform_mvc": "No (Change the color of #.1 and #.2
+methods to grey and not allow them to click to it)", "recommendation":
+"Experimental context 3: Amplitude comparison between muscles during the same
+task (same muscle in different participants; or different muscles in the same
+participant)." }, { "muscle_comparison": "Within muscle", "session_comparison":
+"Between sessions", "group_comparison": "Within-group comparison",
+"perform_mvc": "Yes", "recommendation": "Experimental context 2: Amplitude
+comparison within a person and muscle, between sessions (i.e. re-application of
+electrodes)." }, { "muscle_comparison": "Within muscle", "session_comparison":
+"Between sessions", "group_comparison": "Within-group comparison",
+"perform_mvc": "No (Change the color of #.1 and #.2 methods to grey and not
+allow them to click to it)", "recommendation": "Experimental context 2:
+Amplitude comparison within a person and muscle, between sessions (i.e.
+re-application of electrodes)." }, { "muscle_comparison": "Within muscle",
+"session_comparison": "Between sessions", "group_comparison": "Between-groups
+comparison", "perform_mvc": "Yes", "recommendation": "Experimental context 3:
+Amplitude comparison between muscles during the same task (same muscle in
+different participants; or different muscles in the same participant)." }, {
+"muscle_comparison": "Within muscle", "session_comparison": "Between sessions",
+"group_comparison": "Between-groups comparison", "perform_mvc": "No (Change the
+color of #.1 and #.2 methods to grey and not allow them to click to it)",
+"recommendation": "Extra pannel/page" }, { "muscle_comparison": "Within muscle",
+"session_comparison": "Between sessions", "group_comparison": "Both",
+"perform_mvc": "Yes", "recommendation": "Experimental context 3: Amplitude
+comparison between muscles during the same task (same muscle in different
+participants; or different muscles in the same participant)." }, {
+"muscle_comparison": "Within muscle", "session_comparison": "Between sessions",
+"group_comparison": "Both", "perform_mvc": "No (Change the color of #.1 and #.2
+methods to grey and not allow them to click to it)", "recommendation": "Extra
+pannel/page" }, { "muscle_comparison": "Within muscle", "session_comparison":
+"Both", "group_comparison": "Within-group comparison", "perform_mvc": "Yes",
+"recommendation": "Experimental context 3: Amplitude comparison between muscles
+during the same task (same muscle in different participants; or different
+muscles in the same participant)." }, { "muscle_comparison": "Within muscle",
+"session_comparison": "Both", "group_comparison": "Within-group comparison",
+"perform_mvc": "No (Change the color of #.1 and #.2 methods to grey and not
+allow them to click to it)", "recommendation": "Extra pannel/page" }, {
+"muscle_comparison": "Within muscle", "session_comparison": "Both",
+"group_comparison": "Between-groups comparison", "perform_mvc": "Yes",
+"recommendation": "Experimental context 3: Amplitude comparison between muscles
+during the same task (same muscle in different participants; or different
+muscles in the same participant)." }, { "muscle_comparison": "Within muscle",
+"session_comparison": "Both", "group_comparison": "Between-groups comparison",
+"perform_mvc": "No (Change the color of #.1 and #.2 methods to grey and not
+allow them to click to it)", "recommendation": "Extra pannel/page" }, {
+"muscle_comparison": "Within muscle", "session_comparison": "Both",
+"group_comparison": "Both", "perform_mvc": "Yes", "recommendation":
+"Experimental context 3: Amplitude comparison between muscles during the same
+task (same muscle in different participants; or different muscles in the same
+participant)." }, { "muscle_comparison": "Within muscle", "session_comparison":
+"Both", "group_comparison": "Both", "perform_mvc": "No (Change the color of #.1
+and #.2 methods to grey and not allow them to click to it)", "recommendation":
+"Extra pannel/page" }, { "muscle_comparison": "Between muscles",
+"session_comparison": "Within a session", "group_comparison": "Within-group
+comparison", "perform_mvc": "Yes", "recommendation": "Experimental context 3:
+Amplitude comparison between muscles during the same task (same muscle in
+different participants; or different muscles in the same participant)." }, {
+"muscle_comparison": "Between muscles", "session_comparison": "Within a
+session", "group_comparison": "Within-group comparison", "perform_mvc": "No
+(Change the color of #.1 and #.2 methods to grey and not allow them to click to
+it)", "recommendation": "Extra pannel/page" }, { "muscle_comparison": "Between
+muscles", "session_comparison": "Within a session", "group_comparison":
+"Between-groups comparison", "perform_mvc": "Yes", "recommendation":
+"Experimental context 3: Amplitude comparison between muscles during the same
+task (same muscle in different participants; or different muscles in the same
+participant)." }, { "muscle_comparison": "Between muscles",
+"session_comparison": "Within a session", "group_comparison": "Between-groups
+comparison", "perform_mvc": "No (Change the color of #.1 and #.2 methods to grey
+and not allow them to click to it)", "recommendation": "Extra pannel/page" }, {
+"muscle_comparison": "Between muscles", "session_comparison": "Within a
+session", "group_comparison": "Both", "perform_mvc": "Yes", "recommendation":
+"Experimental context 3: Amplitude comparison between muscles during the same
+task (same muscle in different participants; or different muscles in the same
+participant)." }, { "muscle_comparison": "Between muscles",
+"session_comparison": "Within a session", "group_comparison": "Both",
+"perform_mvc": "No (Change the color of #.1 and #.2 methods to grey and not
+allow them to click to it)", "recommendation": "Extra pannel/page" }, {
+"muscle_comparison": "Between muscles", "session_comparison": "Between
+sessions", "group_comparison": "Within-group comparison", "perform_mvc": "Yes",
+"recommendation": "Experimental context 3: Amplitude comparison between muscles
+during the same task (same muscle in different participants; or different
+muscles in the same participant)." }, { "muscle_comparison": "Between muscles",
+"session_comparison": "Between sessions", "group_comparison": "Within-group
+comparison", "perform_mvc": "No (Change the color of #.1 and #.2 methods to grey
+and not allow them to click to it)", "recommendation": "Extra pannel/page" }, {
+"muscle_comparison": "Between muscles", "session_comparison": "Between
+sessions", "group_comparison": "Between-groups comparison", "perform_mvc":
+"Yes", "recommendation": "Experimental context 3: Amplitude comparison between
+muscles during the same task (same muscle in different participants; or
+different muscles in the same participant)." }, { "muscle_comparison": "Between
+muscles", "session_comparison": "Between sessions", "group_comparison":
+"Between-groups comparison", "perform_mvc": "No (Change the color of #.1 and #.2
+methods to grey and not allow them to click to it)", "recommendation": "Extra
+pannel/page" }, { "muscle_comparison": "Between muscles", "session_comparison":
+"Between sessions", "group_comparison": "Both", "perform_mvc": "Yes",
+"recommendation": "Experimental context 3: Amplitude comparison between muscles
+during the same task (same muscle in different participants; or different
+muscles in the same participant)." }, { "muscle_comparison": "Between muscles",
+"session_comparison": "Between sessions", "group_comparison": "Both",
+"perform_mvc": "No (Change the color of #.1 and #.2 methods to grey and not
+allow them to click to it)", "recommendation": "Extra pannel/page" }, {
+"muscle_comparison": "Between muscles", "session_comparison": "Both",
+"group_comparison": "Within-group comparison", "perform_mvc": "Yes",
+"recommendation": "Experimental context 3: Amplitude comparison between muscles
+during the same task (same muscle in different participants; or different
+muscles in the same participant)." }, { "muscle_comparison": "Between muscles",
+"session_comparison": "Both", "group_comparison": "Within-group comparison",
+"perform_mvc": "No (Change the color of #.1 and #.2 methods to grey and not
+allow them to click to it)", "recommendation": "Extra pannel/page" }, {
+"muscle_comparison": "Between muscles", "session_comparison": "Both",
+"group_comparison": "Between-groups comparison", "perform_mvc": "Yes",
+"recommendation": "Experimental context 3: Amplitude comparison between muscles
+during the same task (same muscle in different participants; or different
+muscles in the same participant)." }, { "muscle_comparison": "Between muscles",
+"session_comparison": "Both", "group_comparison": "Between-groups comparison",
+"perform_mvc": "No (Change the color of #.1 and #.2 methods to grey and not
+allow them to click to it)", "recommendation": "Extra pannel/page" }, {
+"muscle_comparison": "Between muscles", "session_comparison": "Both",
+"group_comparison": "Both", "perform_mvc": "Yes", "recommendation":
+"Experimental context 3: Amplitude comparison between muscles during the same
+task (same muscle in different participants; or different muscles in the same
+participant)." }, { "muscle_comparison": "Between muscles",
+"session_comparison": "Both", "group_comparison": "Both", "perform_mvc": "No
+(Change the color of #.1 and #.2 methods to grey and not allow them to click to
+it)", "recommendation": "Extra pannel/page" }, { "muscle_comparison": "Both",
+"session_comparison": "Within a session", "group_comparison": "Within-group
+comparison", "perform_mvc": "Yes", "recommendation": "Experimental context 3:
+Amplitude comparison between muscles during the same task (same muscle in
+different participants; or different muscles in the same participant)." }, {
+"muscle_comparison": "Both", "session_comparison": "Within a session",
+"group_comparison": "Within-group comparison", "perform_mvc": "No (Change the
+color of #.1 and #.2 methods to grey and not allow them to click to it)",
+"recommendation": "Experimental context 3: Amplitude comparison between muscles
+during the same task (same muscle in different participants; or different
+muscles in the same participant)." }, { "muscle_comparison": "Both",
+"session_comparison": "Within a session", "group_comparison": "Between-groups
+comparison", "perform_mvc": "Yes", "recommendation": "Experimental context 3:
+Amplitude comparison between muscles during the same task (same muscle in
+different participants; or different muscles in the same participant)." }, {
+"muscle_comparison": "Both", "session_comparison": "Within a session",
+"group_comparison": "Between-groups comparison", "perform_mvc": "No (Change the
+color of #.1 and #.2 methods to grey and not allow them to click to it)",
+"recommendation": "Experimental context 3: Amplitude comparison between muscles
+during the same task (same muscle in different participants; or different
+muscles in the same participant)." }, { "muscle_comparison": "Both",
+"session_comparison": "Within a session", "group_comparison": "Both",
+"perform_mvc": "Yes", "recommendation": "Experimental context 3: Amplitude
+comparison between muscles during the same task (same muscle in different
+participants; or different muscles in the same participant)." }, {
+"muscle_comparison": "Both", "session_comparison": "Within a session",
+"group_comparison": "Both", "perform_mvc": "No (Change the color of #.1 and #.2
+methods to grey and not allow them to click to it)", "recommendation":
+"Experimental context 3: Amplitude comparison between muscles during the same
+task (same muscle in different participants; or different muscles in the same
+participant)." }, { "muscle_comparison": "Both", "session_comparison": "Between
+sessions", "group_comparison": "Within-group comparison", "perform_mvc": "Yes",
+"recommendation": "Experimental context 3: Amplitude comparison between muscles
+during the same task (same muscle in different participants; or different
+muscles in the same participant)." }, { "muscle_comparison": "Both",
+"session_comparison": "Between sessions", "group_comparison": "Within-group
+comparison", "perform_mvc": "No (Change the color of #.1 and #.2 methods to grey
+and not allow them to click to it)", "recommendation": "Extra pannel/page" }, {
+"muscle_comparison": "Both", "session_comparison": "Between sessions",
+"group_comparison": "Between-groups comparison", "perform_mvc": "Yes",
+"recommendation": "Experimental context 3: Amplitude comparison between muscles
+during the same task (same muscle in different participants; or different
+muscles in the same participant)." }, { "muscle_comparison": "Both",
+"session_comparison": "Between sessions", "group_comparison": "Between-groups
+comparison", "perform_mvc": "No (Change the color of #.1 and #.2 methods to grey
+and not allow them to click to it)", "recommendation": "Extra pannel/page" }, {
+"muscle_comparison": "Both", "session_comparison": "Between sessions",
+"group_comparison": "Both", "perform_mvc": "Yes", "recommendation":
+"Experimental context 3: Amplitude comparison between muscles during the same
+task (same muscle in different participants; or different muscles in the same
+participant)." }, { "muscle_comparison": "Both", "session_comparison": "Between
+sessions", "group_comparison": "Both", "perform_mvc": "No (Change the color of
+#.1 and #.2 methods to grey and not allow them to click to it)",
+"recommendation": "Extra pannel/page" }, { "muscle_comparison": "Both",
+"session_comparison": "Both", "group_comparison": "Within-group comparison",
+"perform_mvc": "Yes", "recommendation": "Experimental context 3: Amplitude
+comparison between muscles during the same task (same muscle in different
+participants; or different muscles in the same participant)." }, {
+"muscle_comparison": "Both", "session_comparison": "Both", "group_comparison":
+"Within-group comparison", "perform_mvc": "No (Change the color of #.1 and #.2
+methods to grey and not allow them to click to it)", "recommendation": "Extra
+pannel/page" }, { "muscle_comparison": "Both", "session_comparison": "Both",
+"group_comparison": "Between-groups comparison", "perform_mvc": "Yes",
+"recommendation": "Experimental context 3: Amplitude comparison between muscles
+during the same task (same muscle in different participants; or different
+muscles in the same participant)." }, { "muscle_comparison": "Both",
+"session_comparison": "Both", "group_comparison": "Between-groups comparison",
+"perform_mvc": "No (Change the color of #.1 and #.2 methods to grey and not
+allow them to click to it)", "recommendation": "Extra pannel/page" }, {
+"muscle_comparison": "Both", "session_comparison": "Both", "group_comparison":
+"Both", "perform_mvc": "Yes", "recommendation": "Experimental context 3:
+Amplitude comparison between muscles during the same task (same muscle in
+different participants; or different muscles in the same participant)." }, {
+"muscle_comparison": "Both", "session_comparison": "Both", "group_comparison":
+"Both", "perform_mvc": "No (Change the color of #.1 and #.2 methods to grey and
+not allow them to click to it)", "recommendation": "Extra pannel/page" } ] and
+this is the script.js // import "constants.js"; let rules = []; // Ensure this
+is defined globally // Mapping for user-selected values to JSON values const
+valueMapping = { "Comparisons between muscles (e.g. vastus lateralis vs. vastus
+medialis during knee extension task)": "Between muscles", "Comparisons within a
+muscle (e.g. vastus lateralis pre and post intervention)": "Within muscle",
+Both: "Both", "Comparisons between sessions (e.g. repeated measures in different
+time points)": "Between sessions", "Comparisons within a session (e.g.
+comparisons of two tasks during a laboratory session)": "Within a session",
+"Comparisons between participant groups (e.g. pain condition vs. control
+group)": "Between-groups comparison", "Comparisons within a participant group
+(e.g. knee extension at 10% and 50% of MVC in healthy individuals)":
+"Within-group comparison", Yes: "Yes", "No (Change the color of #.1 and #.2
+methods to grey and not allow them to click to it)": "No (Change the color of
+#.1 and #.2 methods to grey and not allow them to click to it)", }; // Function
+to handle option selection function selectOption(element) { const name =
+element.name; document.querySelectorAll(input[name="${name}"]).forEach((input)
+=> { input.closest(".option").classList.remove("selected"); });
+element.closest(".option").classList.add("selected"); // Check if all questions
+are answered to enable the submit button const allAnswered =
+document.querySelectorAll('input[type="radio"]:checked').length === 4;
+document.getElementById("submit-button").disabled = !allAnswered; } // Function
+to go back function goBack() { window.location.href = "collectdata.html"; } //
+Function to get recommendation based on user responses function
+getRecommendation() { const q1Value = document
+.querySelector('input[name="q1"]:checked') ?.value.trim(); const q2Value =
+document .querySelector('input[name="q2"]:checked') ?.value.trim(); const
+q3Value = document .querySelector('input[name="q3"]:checked') ?.value.trim();
+const q3aValue = document .querySelector('input[name="q3a"]:checked')
+?.value.trim(); console.log("q1 value:", q1Value); console.log("q2 value:",
+q2Value); console.log("q3 value:", q3Value); console.log("q3a value:",
+q3aValue); // Ensure the values are exactly as expected in the mapping const
+mappedQ1 = valueMapping[q1Value] || Unmapped value: ${q1Value}; const mappedQ2 =
+valueMapping[q2Value] || Unmapped value: ${q2Value}; const mappedQ3 =
+valueMapping[q3Value] || Unmapped value: ${q3Value}; const mappedQ3a =
+valueMapping[q3aValue] || Unmapped value: ${q3aValue}; console.log("Mapped q1
+value:", mappedQ1); console.log("Mapped q2 value:", mappedQ2);
+console.log("Mapped q3 value:", mappedQ3); console.log("Mapped q3a value:",
+mappedQ3a); // Map the longer user-selected values to the shorter JSON rule
+values const userResponses = { muscle_comparison: mappedQ1, session_comparison:
+mappedQ2, group_comparison: mappedQ3, perform_mvc: mappedQ3a, }; // const
+userResponses = { // muscle_comparison: "Between muscles", //
+session_comparison: "Between sessions", // group_comparison: "Between-groups
+comparison", // perform_mvc: // "No (Change the color of #.1 and #.2 methods to
+grey and not allow them to click to it)", // }; console.log("User responses:",
+userResponses); console.log("Rules available:", rules); const matchingRule =
+rules.find((rule) => { console.log("Checking rule:", rule); return (
+rule.muscle_comparison === userResponses.muscle_comparison &&
+rule.session_comparison === userResponses.session_comparison &&
+rule.group_comparison === userResponses.group_comparison && rule.perform_mvc ===
+userResponses.perform_mvc ); }); console.log("Matching rule:", matchingRule); if
+(matchingRule) { localStorage.setItem("recommendation",
+matchingRule.recommendation); window.location.href = "recommendation.html"; }
+else { console.log( "No recommendation found for the given responses:",
+userResponses ); //alert("No recommendation found for the given responses."); }
+} // Event listener for document load
+document.addEventListener("DOMContentLoaded", () => { console.log("Document
+loaded"); fetch("rules.json") .then((response) => { if (!response.ok) { throw
+new Error(HTTP error! Status: ${response.status}); } console.log("Fetching
+rules.json successful"); return response.json(); }) .then((loadedRules) => {
+console.log("Rules data loaded:", loadedRules); rules = loadedRules; // Assign
+the loaded rules to the global variable // Attach event listeners to form
+elements document.querySelectorAll('input[name="q1"]').forEach((input) => {
+input.addEventListener("change", () => selectOption(input)); });
+document.querySelectorAll('input[name="q2"]').forEach((input) => {
+input.addEventListener("change", () => selectOption(input)); });
+document.querySelectorAll('input[name="q3"]').forEach((input) => {
+input.addEventListener("change", () => selectOption(input)); });
+document.querySelectorAll('input[name="q3a"]').forEach((input) => {
+input.addEventListener("change", () => selectOption(input)); });
+document.getElementById("submit-button").addEventListener("click", () => {
+getRecommendation(); }); console.log("Event listeners attached"); })
+.catch((error) => { console.error("Error fetching rules.json:", error); }); });
