@@ -3,80 +3,102 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Amplitude Normalization - Collect Data</title>
+    <title>Temporal Features - CEDE</title>
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="features.css" />
     <style>
       #wrapper {
         width: 100%;
         text-align: center;
       }
-
-      main {
+      .question-container {
+        background-color: white;
         padding: 20px;
-      }
-
-      #decision-form {
-        background: #fff;
-        padding: 20px;
-        width: 50%;
-        margin: 20px auto;
-        border: 1px solid #ccc;
         border-radius: 8px;
+        margin-bottom: 20px;
+        border: 1px solid #ccc;
       }
-
+      .question h3 {
+        margin-top: 0;
+      }
+      .question label {
+        display: block;
+        margin-bottom: 10px;
+      }
       .option {
         display: flex;
-        justify-content: space-between;
         align-items: center;
         border: 1px solid #ccc;
         margin-bottom: 10px;
         padding: 10px;
         cursor: pointer;
+        background-color: white;
+        color: #5f5f5f;
       }
-
       .option:hover {
         background-color: #f0f0f0;
       }
+      .option input[type="radio"] {
+        display: none;
+      }
+      .option.selected {
+        background-color: #d4edda;
+        border-color: #c3e6cb;
+      }
 
-      .arrow {
+      .label {
+        font-size: 1.1em;
         font-weight: bold;
+        color: #4a4a4a;
       }
 
       button {
         font-size: 1rem;
         padding: 0.5rem 1rem;
-        border-radius: 10px; /* Adjusted for slightly rounded corners */
+        border-radius: 30px;
         border: 2px solid #007bff;
         background-color: white;
         color: #007bff;
         text-transform: uppercase;
       }
-
-      .btn-primary {
-        font-size: 1rem;
-        padding: 0.5rem 1rem;
-        border-radius: 10px; /* Adjusted for slightly rounded corners */
-        border: 2px solid #007bff;
+      button:disabled {
+        background-color: #e9ecef;
+        color: #6c757d;
+        border: 2px solid #6c757d;
+      }
+      #back-button {
         background-color: white;
         color: #007bff;
-        text-transform: uppercase;
+        border: 2px solid #007bff;
       }
-
-      .btn-primary:hover {
+      #back-button:hover {
         background-color: #007bff;
         color: white;
+      }
+      #submit-button {
+        background-color: #007bff;
+        color: white;
+        border: 2px solid #007bff;
+      }
+      #submit-button:disabled {
+        background-color: #e9ecef;
+        color: #6c757d;
+        border: 2px solid #6c757d;
+      }
+      .text-center {
+        text-align: center;
+        margin-bottom: 96px;
       }
     </style>
   </head>
   <body>
-    <!-- Navigation Bar -->
     <nav class="navbar navbar-expand-lg navbar-light bg-white">
       <div class="container-fluid">
-        <a class="navbar-brand" href="index.html">CEDE</a>
+        <a class="navbar-brand" href="#">CEDE</a>
         <button
           class="navbar-toggler"
           type="button"
@@ -93,7 +115,7 @@
           id="navbarNavAltMarkup"
         >
           <div class="navbar-nav">
-            <a class="nav-link" href="index.html">Home</a>
+            <a class="nav-link active" href="index.html">Home</a>
             <div class="nav-item dropdown">
               <a
                 class="nav-link dropdown-toggle"
@@ -146,44 +168,65 @@
           <li class="breadcrumb-item">
             <a href="inttool.html">Interactive Tool</a>
           </li>
+          <li class="breadcrumb-item">
+            <a href="collectdata.html">Collect Data</a>
+          </li>
           <li class="breadcrumb-item active" aria-current="page">
-            Collect Data
+            Temporal Features
           </li>
         </ol>
       </nav>
-      <h2 class="mb-4">Collect Data</h2>
-      <p class="lead">What EMG outcome(s) am I comparing?</p>
-      <p>Select one:</p>
-      <div class="options-container">
-        <div class="option" onclick="window.location.href='features.html'">
-          <span>Amplitude features</span>
+      <h2 class="mb-4">Temporal Features</h2>
+      <form id="question-form">
+        <!-- Question -->
+        <div class="question-container">
+          <div class="question">
+            <label class="label">
+              Does your experiment involve the identification of period of
+              activity (onset-offset) or the identification of patterns of
+              activation from averaged EMG traces from muscles/groups/trials?
+            </label>
+            <label class="option">
+              <input
+                type="radio"
+                name="q1"
+                id="q1-1"
+                value="Identification of period of activity (onset-offset)"
+                onchange="selectOption(this)"
+              />
+              Identification of period of activity (onset-offset)
+            </label>
+            <label class="option">
+              <input
+                type="radio"
+                name="q1"
+                id="q1-2"
+                value="Identification of patterns of activation from averaged muscles/groups/trials"
+                onchange="selectOption(this)"
+              />
+              Identification of patterns of activation from averaged
+              muscles/groups/trials
+            </label>
+          </div>
         </div>
-        <div class="option" onclick="window.location.href='tempfeatures.html'">
-          <span>Temporal features</span>
+
+        <div class="text-center mt-4">
+          <button type="button" class="btn" id="back-button" onclick="goBack()">
+            Back
+          </button>
+          <button
+            type="button"
+            class="btn"
+            id="submit-button"
+            di
+            onclick="getRecommendation()"
+          >
+            Submit
+          </button>
         </div>
-        <div class="option" onclick="selectOption('synergies')">
-          <span>Synergies</span>
-        </div>
-        <div class="option" onclick="selectOption('muscle-force')">
-          <span>Estimation of muscle force</span>
-        </div>
-        <div class="option" onclick="selectOption('evoked-responses')">
-          <span>Evoked responses</span>
-        </div>
-      </div>
-      <div class="text-center mt-4">
-        <button
-          type="button"
-          class="btn btn-primary"
-          id="back-button"
-          onclick="goBack()"
-        >
-          Back
-        </button>
-      </div>
+      </form>
     </div>
 
-    <!-- Scripts -->
     <script src="script.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
   </body>
