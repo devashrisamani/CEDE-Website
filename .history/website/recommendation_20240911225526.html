@@ -477,74 +477,61 @@
             .join("");
 
           // Add event listeners for "See More" buttons
-          //   document.querySelectorAll(".see-more-btn").forEach((button) => {
-          //     button.addEventListener("click", function () {
-          //       const methodIndex = this.getAttribute("data-method-index");
-          //       const elementId = this.getAttribute("data-element-id");
+        //   document.querySelectorAll(".see-more-btn").forEach((button) => {
+        //     button.addEventListener("click", function () {
+        //       const methodIndex = this.getAttribute("data-method-index");
+        //       const elementId = this.getAttribute("data-element-id");
 
-          //       // Store selected method details in localStorage, including the questions and answers
-          //       const selectedMethod = methods[methodIndex];
-          //       localStorage.setItem(
-          //         "selectedMethod",
-          //         JSON.stringify({
-          //           title: selectedMethod.title,
-          //           whyGoodChoice: [
-          //             "MVC provides a meaningful reference – the onset/offset threshold can be interpreted with respect to the maximum capacity of that muscle in that context.",
-          //             "Because the investigated task and the MVC task are the same, it is more likely that the EMG amplitude represents the true maximum muscle activation that is possible in that context, and the selected threshold will provide a valid reference value for that task.",
-          //             "The threshold will be the same for all muscles investigated.",
-          //             "It is likely that the maximum performance is repeatable in separate sessions.",
-          //           ],
-          //           caveats: [
-          //             "Normalising to MVC during dynamic conditions can be challenging and sometimes shortcuts are taken, for example, this might involve performing MVC in a subset of contexts (but not all).",
-          //             "Caution if a different level of activation is achieved for different muscles during the attempted MVC.",
-          //             "Care must be taken in selecting the threshold of amplitude to ensure that it is meaningful.",
-          //             "Some participants are potentially unable to perform a true MVC. Therefore, interpreting the results would be challenging.",
-          //           ],
-          //           howToDoIt: [
-          //             "Conduct between 3-5 contractions that generate consistent values.",
-          //             "Include adequate rest periods (1-2 minutes) that will depend on the duration of the maximal efforts.",
-          //             "Ensure the participant performs a true maximum.",
-          //           ],
-          //         })
-          //       );
-          //     });
-          //   });
+        //       // Store selected method details in localStorage, including the questions and answers
+        //       const selectedMethod = methods[methodIndex];
+        //       localStorage.setItem(
+        //         "selectedMethod",
+        //         JSON.stringify({
+        //           title: selectedMethod.title,
+        //           whyGoodChoice: [
+        //             "MVC provides a meaningful reference – the onset/offset threshold can be interpreted with respect to the maximum capacity of that muscle in that context.",
+        //             "Because the investigated task and the MVC task are the same, it is more likely that the EMG amplitude represents the true maximum muscle activation that is possible in that context, and the selected threshold will provide a valid reference value for that task.",
+        //             "The threshold will be the same for all muscles investigated.",
+        //             "It is likely that the maximum performance is repeatable in separate sessions.",
+        //           ],
+        //           caveats: [
+        //             "Normalising to MVC during dynamic conditions can be challenging and sometimes shortcuts are taken, for example, this might involve performing MVC in a subset of contexts (but not all).",
+        //             "Caution if a different level of activation is achieved for different muscles during the attempted MVC.",
+        //             "Care must be taken in selecting the threshold of amplitude to ensure that it is meaningful.",
+        //             "Some participants are potentially unable to perform a true MVC. Therefore, interpreting the results would be challenging.",
+        //           ],
+        //           howToDoIt: [
+        //             "Conduct between 3-5 contractions that generate consistent values.",
+        //             "Include adequate rest periods (1-2 minutes) that will depend on the duration of the maximal efforts.",
+        //             "Ensure the participant performs a true maximum.",
+        //           ],
+        //         })
+        //       );
+        //     });
+        //   });
+        // }
 
-          document.querySelectorAll(".see-more-btn").forEach((button) => {
-            button.addEventListener("click", function () {
-              const methodIndex = this.getAttribute("data-method-index"); // Index of selected method
-              const elementId = this.getAttribute("data-element-id"); // Category (high, caution, low)
+        document.querySelectorAll(".see-more-btn").forEach((button) => {
+          button.addEventListener("click", function () {
+              const methodIndex = this.getAttribute("data-method-index");
+              const elementId = this.getAttribute("data-element-id");
 
-              // Correctly map the methods section (high-probability, caution, or low-probability)
-              const selectedMethodsSection =
-                methodsData[recommendation][elementId];
-
-              // Ensure the correct method is fetched based on methodIndex and elementId
+              const selectedMethodsSection = methodsData[recommendation][elementId];
               const selectedMethod = selectedMethodsSection[methodIndex];
 
-              // Now store the selected method details in localStorage
+              // Store method details in localStorage
               localStorage.setItem(
-                "selectedMethod",
-                JSON.stringify({
-                  title: selectedMethod.title, // Ensure this is correct
-                  whyGoodChoice: selectedMethod.whyGoodChoice,
-                  caveats: selectedMethod.caveats,
-                  howToDoIt: selectedMethod.howToDoIt,
-                  probability: elementId, // high-probability, caution, or low-probability
-                })
+                  "selectedMethod",
+                  JSON.stringify({
+                      title: selectedMethod.title,
+                      whyGoodChoice: selectedMethod.whyGoodChoice,
+                      caveats: selectedMethod.caveats,
+                      howToDoIt: selectedMethod.howToDoIt,
+                  })
               );
-
-              // Add console.log to debug the selected method and ensure correct title is saved
-              console.log("Selected Method saved to localStorage:", {
-                title: selectedMethod.title,
-                whyGoodChoice: selectedMethod.whyGoodChoice,
-                caveats: selectedMethod.caveats,
-                howToDoIt: selectedMethod.howToDoIt,
-                probability: elementId,
-              });
-            });
           });
-        }
+      });
+
 
         // Load the recommendation data into the page
         if (recommendation && methodsData[recommendation]) {

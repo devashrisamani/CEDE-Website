@@ -512,21 +512,18 @@
 
           document.querySelectorAll(".see-more-btn").forEach((button) => {
             button.addEventListener("click", function () {
-              const methodIndex = this.getAttribute("data-method-index"); // Index of selected method
-              const elementId = this.getAttribute("data-element-id"); // Category (high, caution, low)
+              const methodIndex = this.getAttribute("data-method-index");
+              const elementId = this.getAttribute("data-element-id");
 
-              // Correctly map the methods section (high-probability, caution, or low-probability)
               const selectedMethodsSection =
                 methodsData[recommendation][elementId];
-
-              // Ensure the correct method is fetched based on methodIndex and elementId
               const selectedMethod = selectedMethodsSection[methodIndex];
 
-              // Now store the selected method details in localStorage
+              // Store method details in localStorage
               localStorage.setItem(
                 "selectedMethod",
                 JSON.stringify({
-                  title: selectedMethod.title, // Ensure this is correct
+                  title: selectedMethod.title,
                   whyGoodChoice: selectedMethod.whyGoodChoice,
                   caveats: selectedMethod.caveats,
                   howToDoIt: selectedMethod.howToDoIt,
@@ -534,7 +531,7 @@
                 })
               );
 
-              // Add console.log to debug the selected method and ensure correct title is saved
+              // Add console.log to check what is being saved in localStorage
               console.log("Selected Method saved to localStorage:", {
                 title: selectedMethod.title,
                 whyGoodChoice: selectedMethod.whyGoodChoice,

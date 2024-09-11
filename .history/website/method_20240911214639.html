@@ -247,183 +247,70 @@
       </div>
     </div>
 
-    <!-- <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        const selectedMethod = JSON.parse(
-          localStorage.getItem("selectedMethod")
-        );
-
-        if (selectedMethod) {
-          // Dynamically insert the method title
-          document.getElementById("method-title").innerText =
-            selectedMethod.title;
-
-          // Update the recommendation section based on the probability type
-          let recommendationClass = "high-probability"; // default class
-          let recommendationText =
-            "Yes: High probability that this is appropriate";
-
-          if (selectedMethod.probability === "caution") {
-            recommendationClass = "caution";
-            recommendationText =
-              "Caution: Might be appropriate, considering specific issues";
-          } else if (selectedMethod.probability === "low") {
-            recommendationClass = "low-probability";
-            recommendationText =
-              "No: High probability that this is inappropriate";
-          }
-
-          // Set the recommendation class and heading
-          const recommendationSection = document.getElementById(
-            "recommendation-section"
-          );
-          recommendationSection.classList.add(recommendationClass);
-          document.getElementById("recommendation-heading").innerText =
-            recommendationText;
-
-          // Insert the 'Why is this method a good choice?' content
-          document.getElementById("why-good-choice").innerHTML = `
-            <ul>
-              ${selectedMethod.whyGoodChoice
-                .map((item) => `<li>${item}</li>`)
-                .join("")}
-            </ul>
-          `;
-
-          // Insert the 'What are the caveats?' content
-          document.getElementById("what-caveats").innerHTML = `
-            <ul>
-              ${selectedMethod.caveats
-                .map((item) => `<li>${item}</li>`)
-                .join("")}
-            </ul>
-          `;
-
-          // Insert the 'How should you do it?' content
-          document.getElementById("how-do-it").innerHTML = `
-            <ul>
-              ${selectedMethod.howToDoIt
-                .map((item) => `<li>${item}</li>`)
-                .join("")}
-            </ul>
-          `;
-        }
-      });
-    </script> -->
-
     <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        // Retrieve selected method from localStorage
-        const selectedMethod = JSON.parse(
-          localStorage.getItem("selectedMethod")
-        );
+      // document.addEventListener("DOMContentLoaded", function () {
+      //   const selectedMethod = JSON.parse(
+      //     localStorage.getItem("selectedMethod")
+      //   );
 
-        // Log the selectedMethod object to verify its content
-        console.log("Selected Method Object:", selectedMethod);
+      //   if (selectedMethod) {
+      //     // Dynamically insert the method title
+      //     document.getElementById("method-title").innerText =
+      //       selectedMethod.title;
 
-        if (selectedMethod) {
-          const { probability, title, whyGoodChoice, caveats, howToDoIt } =
-            selectedMethod;
+      //     // Update the recommendation section based on the probability type
+      //     let recommendationClass = "high-probability"; // default class
+      //     let recommendationText =
+      //       "Yes: High probability that this is appropriate";
 
-          // Handle recommendation class and text
-          let recommendationClass;
-          let recommendationText;
+      //     if (selectedMethod.probability === "caution") {
+      //       recommendationClass = "caution";
+      //       recommendationText =
+      //         "Caution: Might be appropriate, considering specific issues";
+      //     } else if (selectedMethod.probability === "low") {
+      //       recommendationClass = "low-probability";
+      //       recommendationText =
+      //         "No: High probability that this is inappropriate";
+      //     }
 
-          switch (probability) {
-            case "high-probability":
-              recommendationClass = "high-probability";
-              recommendationText =
-                "Yes: High probability that this is appropriate";
-              break;
-            case "caution":
-              recommendationClass = "caution";
-              recommendationText =
-                "Caution: Might be appropriate, considering specific issues";
-              break;
-            case "low-probability":
-              recommendationClass = "low-probability";
-              recommendationText =
-                "No: High probability that this is inappropriate";
-              break;
-            default:
-              recommendationClass = "high-probability"; // Default class
-              recommendationText =
-                "Yes: High probability that this is appropriate"; // Default text
-          }
+      //     // Set the recommendation class and heading
+      //     const recommendationSection = document.getElementById(
+      //       "recommendation-section"
+      //     );
+      //     recommendationSection.classList.add(recommendationClass);
+      //     document.getElementById("recommendation-heading").innerText =
+      //       recommendationText;
 
-          // Update Recommendation Section (recommendation-heading)
-          const recommendationHeading = document.getElementById(
-            "recommendation-heading"
-          );
-          if (recommendationHeading) {
-            recommendationHeading.innerText = recommendationText;
-          } else {
-            console.error("recommendation-heading element not found!");
-          }
+      //     // Insert the 'Why is this method a good choice?' content
+      //     document.getElementById("why-good-choice").innerHTML = `
+      //       <ul>
+      //         ${selectedMethod.whyGoodChoice
+      //           .map((item) => `<li>${item}</li>`)
+      //           .join("")}
+      //       </ul>
+      //     `;
 
-          // Add class to the recommendation section
-          const recommendationSection = document.getElementById(
-            "recommendation-section"
-          );
-          if (recommendationSection) {
-            recommendationSection.classList.add(recommendationClass);
-          } else {
-            console.error("recommendation-section element not found!");
-          }
+      //     // Insert the 'What are the caveats?' content
+      //     document.getElementById("what-caveats").innerHTML = `
+      //       <ul>
+      //         ${selectedMethod.caveats
+      //           .map((item) => `<li>${item}</li>`)
+      //           .join("")}
+      //       </ul>
+      //     `;
 
-          // Log the title to check its value before setting it
-          console.log("Title to be set:", title);
+      //     // Insert the 'How should you do it?' content
+      //     document.getElementById("how-do-it").innerHTML = `
+      //       <ul>
+      //         ${selectedMethod.howToDoIt
+      //           .map((item) => `<li>${item}</li>`)
+      //           .join("")}
+      //       </ul>
+      //     `;
+      //   }
+      // });
 
-          // Update Method Title (method-title)
-          const methodTitleElement = document.getElementById("method-title");
-          if (methodTitleElement) {
-            methodTitleElement.innerText = title; // Assuming title exists in selectedMethod
-          } else {
-            console.error(
-              "method-title element not found or title is missing!"
-            );
-          }
-
-          // Now, insert the 'Why is this method a good choice?' content
-          const whyGoodChoiceElement =
-            document.getElementById("why-good-choice");
-          if (whyGoodChoiceElement) {
-            whyGoodChoiceElement.innerHTML = `
-                <ul>
-                    ${whyGoodChoice.map((item) => `<li>${item}</li>`).join("")}
-                </ul>
-            `;
-          } else {
-            console.error("why-good-choice element not found!");
-          }
-
-          // Insert the 'What are the caveats?' content
-          const whatCaveatsElement = document.getElementById("what-caveats");
-          if (whatCaveatsElement) {
-            whatCaveatsElement.innerHTML = `
-                <ul>
-                    ${caveats.map((item) => `<li>${item}</li>`).join("")}
-                </ul>
-            `;
-          } else {
-            console.error("what-caveats element not found!");
-          }
-
-          // Insert the 'How should you do it?' content
-          const howToDoItElement = document.getElementById("how-do-it");
-          if (howToDoItElement) {
-            howToDoItElement.innerHTML = `
-                <ul>
-                    ${howToDoIt.map((item) => `<li>${item}</li>`).join("")}
-                </ul>
-            `;
-          } else {
-            console.error("how-do-it element not found!");
-          }
-        } else {
-          console.error("selectedMethod not found in localStorage!");
-        }
-      });
+      addEventListener;
     </script>
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>

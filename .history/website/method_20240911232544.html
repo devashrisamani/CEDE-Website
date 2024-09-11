@@ -313,13 +313,10 @@
 
     <script>
       document.addEventListener("DOMContentLoaded", function () {
-        // Retrieve selected method from localStorage
         const selectedMethod = JSON.parse(
           localStorage.getItem("selectedMethod")
         );
-
-        // Log the selectedMethod object to verify its content
-        console.log("Selected Method Object:", selectedMethod);
+        console.log("Selected Method Object:", selectedMethod); // Confirm that the object is correct
 
         if (selectedMethod) {
           const { probability, title, whyGoodChoice, caveats, howToDoIt } =
@@ -370,9 +367,6 @@
           } else {
             console.error("recommendation-section element not found!");
           }
-
-          // Log the title to check its value before setting it
-          console.log("Title to be set:", title);
 
           // Update Method Title (method-title)
           const methodTitleElement = document.getElementById("method-title");

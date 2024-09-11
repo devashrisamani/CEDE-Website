@@ -247,7 +247,7 @@
       </div>
     </div>
 
-    <!-- <script>
+    <script>
       document.addEventListener("DOMContentLoaded", function () {
         const selectedMethod = JSON.parse(
           localStorage.getItem("selectedMethod")
@@ -307,121 +307,6 @@
                 .join("")}
             </ul>
           `;
-        }
-      });
-    </script> -->
-
-    <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        // Retrieve selected method from localStorage
-        const selectedMethod = JSON.parse(
-          localStorage.getItem("selectedMethod")
-        );
-
-        // Log the selectedMethod object to verify its content
-        console.log("Selected Method Object:", selectedMethod);
-
-        if (selectedMethod) {
-          const { probability, title, whyGoodChoice, caveats, howToDoIt } =
-            selectedMethod;
-
-          // Handle recommendation class and text
-          let recommendationClass;
-          let recommendationText;
-
-          switch (probability) {
-            case "high-probability":
-              recommendationClass = "high-probability";
-              recommendationText =
-                "Yes: High probability that this is appropriate";
-              break;
-            case "caution":
-              recommendationClass = "caution";
-              recommendationText =
-                "Caution: Might be appropriate, considering specific issues";
-              break;
-            case "low-probability":
-              recommendationClass = "low-probability";
-              recommendationText =
-                "No: High probability that this is inappropriate";
-              break;
-            default:
-              recommendationClass = "high-probability"; // Default class
-              recommendationText =
-                "Yes: High probability that this is appropriate"; // Default text
-          }
-
-          // Update Recommendation Section (recommendation-heading)
-          const recommendationHeading = document.getElementById(
-            "recommendation-heading"
-          );
-          if (recommendationHeading) {
-            recommendationHeading.innerText = recommendationText;
-          } else {
-            console.error("recommendation-heading element not found!");
-          }
-
-          // Add class to the recommendation section
-          const recommendationSection = document.getElementById(
-            "recommendation-section"
-          );
-          if (recommendationSection) {
-            recommendationSection.classList.add(recommendationClass);
-          } else {
-            console.error("recommendation-section element not found!");
-          }
-
-          // Log the title to check its value before setting it
-          console.log("Title to be set:", title);
-
-          // Update Method Title (method-title)
-          const methodTitleElement = document.getElementById("method-title");
-          if (methodTitleElement) {
-            methodTitleElement.innerText = title; // Assuming title exists in selectedMethod
-          } else {
-            console.error(
-              "method-title element not found or title is missing!"
-            );
-          }
-
-          // Now, insert the 'Why is this method a good choice?' content
-          const whyGoodChoiceElement =
-            document.getElementById("why-good-choice");
-          if (whyGoodChoiceElement) {
-            whyGoodChoiceElement.innerHTML = `
-                <ul>
-                    ${whyGoodChoice.map((item) => `<li>${item}</li>`).join("")}
-                </ul>
-            `;
-          } else {
-            console.error("why-good-choice element not found!");
-          }
-
-          // Insert the 'What are the caveats?' content
-          const whatCaveatsElement = document.getElementById("what-caveats");
-          if (whatCaveatsElement) {
-            whatCaveatsElement.innerHTML = `
-                <ul>
-                    ${caveats.map((item) => `<li>${item}</li>`).join("")}
-                </ul>
-            `;
-          } else {
-            console.error("what-caveats element not found!");
-          }
-
-          // Insert the 'How should you do it?' content
-          const howToDoItElement = document.getElementById("how-do-it");
-          if (howToDoItElement) {
-            howToDoItElement.innerHTML = `
-                <ul>
-                    ${howToDoIt.map((item) => `<li>${item}</li>`).join("")}
-                </ul>
-            `;
-          } else {
-            console.error("how-do-it element not found!");
-          }
-        } else {
-          console.error("selectedMethod not found in localStorage!");
         }
       });
     </script>
