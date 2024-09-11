@@ -226,7 +226,6 @@
         </div>
       </form>
     </div>
-
     <script>
       // This function will be called when user selects an option
       function selectOption(selectedOption) {
@@ -246,7 +245,7 @@
         ) {
           localStorage.setItem(
             "recommendation",
-            "Experimental context 5: Identification of periods of activity and inactivity using thresholds based on signal amplitude for comparison between muscles/groups."
+            "Experimental context 5: Identification of periods of activity and inactivity using thresholds based on signal amplitude for comparison between muscles/groups (5.1 - 5.6)."
           );
         } else if (
           selectedOption ===
@@ -254,7 +253,7 @@
         ) {
           localStorage.setItem(
             "recommendation",
-            "Experimental context 6: Identification of pattern* of activation from averaged data for comparison between muscles/groups/trials."
+            "Experimental context 6: Identification of pattern* of activation from averaged data for comparison between muscles/groups/trials. *Pattern could relate to timing of events (e.g. time of peak/trough/onset) or relative amplitude of events or rate of increase/decrease of EMG amplitude, etc. (6.1 - 6.6)."
           );
         }
 
@@ -267,6 +266,7 @@
       }
     </script>
 
+    <script src="script.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
   </body>
 </html>

@@ -402,34 +402,34 @@
                   title:
                     "Normalisation to the maximum voluntary contraction (MVC) in the same task/context as the task of interest (with matched contraction type*, muscle length/joint angle, and/or velocity) *isometric; concentric; eccentric",
                   content:
-                    'Normalisation to the maximum voluntary contraction (MVC) is appropriate when identifying periods of activity or inactivity based on EMG amplitude thresholds. The physiological meaning of the threshold (i.e., percentage of MVC) for onset of EMG will be consistent between muscles and participant groups as long as a true maximum contraction is performed. Caution if a different level of activation is achieved for different muscles during the attempted MVC. This is very difficult to detect but would normally require superimposed twitch interpolation [hyperlink with explanation of concept]. This would be clear if the normalised amplitude exceeds 100%. <a href="method.html">See More</a>',
+                    "Normalisation to the maximum voluntary contraction (MVC) is appropriate when identifying periods of activity or inactivity based on EMG amplitude thresholds. The physiological meaning of the threshold (i.e., percentage of MVC) for onset of EMG will be consistent between muscles and participant groups as long as a true maximum contraction is performed. Caution if a different level of activation is achieved for different muscles during the attempted MVC. This is very difficult to detect but would normally require superimposed twitch interpolation [hyperlink with explanation of concept]. This would be clear if the normalised amplitude exceeds 100%..",
                 },
                 {
                   title:
-                    "Normalisation to a standardised isometric MVC when it is not possible to match the outcome contraction (e.g., multiple tasks or muscles investigated).",
+                    "Normalization to a standardized isometric maximum voluntary contraction (MVC) when it is not possible to match all aspects of the task of interest (e.g., multiple tasks or muscles investigated, complex task).",
                   content:
-                    "Although normalisation to a standardised isometric MVC is appropriate when identifying periods of activity or inactivity based on EMG amplitude thresholds, this method is less ideal than Normalisation to the maximum voluntary contraction (MVC) in the same task/context as the task of interest [hyperlink to method 5.1], because it DOES NOT control for physiological and anatomical differences (e.g., contraction type, contraction type, speed, muscle length or relative position between electrodes and muscle fibres, muscle architecture [e.g., pennation angle, fibres curvature],  etc.) between the task of interested and the MVC task. The physiological meaning of the threshold (i.e., percentage of MVC) for onset identification of the EMG signal will be consistent between muscles and participant groups as long as a true maximum contraction is performed. Caution if different levels of activation are achieved for different muscles during the attempted MVC.",
+                    "Normalization to a standardized isometric maximum voluntary contraction (MVC) provides a relative value useful to compare the EMG amplitude of different muscles within a person or the same muscle between participants. This method is less ideal than “normalization to the MVC in the same task/context as the task of interest” because it DOES NOT control for physiological and anatomical issues (e.g., contraction type, muscle architecture, electrode placement, etc.).",
                 },
               ],
               caution: [
                 {
-                  title: "Non-normalised EMG amplitude.",
+                  title: "Normalized to the maximal M-wave amplitude.",
                   content:
-                    "For the identification of periods of activity or inactivity based on EMG amplitude thresholds Non-normalised EMG amplitude is not appropriate. As the amplitude of the EMG will likely differ between muscles/ groups this will influence the threshold that is set (when periods of activity/ inactivity are identified from values as a proportion of a specific EMG amplitude). If the non-normalised value is used as the threshold, muscles with low amplitude will have a bias towards earlier identification of activity than a muscle that is activated to a high EMG amplitude during the task. Note that an alternative approach to identifying periods of activity of non-normalised EMG amplitude would be identifying the onset as the value corresponding to 2–3 standard deviations above the baseline recording if sustained for a specified number of milliseconds.",
+                    "Generally, normalization to the maximal M-wave amplitude is only used for normalization of evoked potentials (i.e., motor evoked potentials (MEP) or Hoffman reflex (H-reflex)).",
                 },
               ],
               low: [
                 {
                   title:
-                    "Normalisation to a standardised submaximal task (isometric/ dynamic) that can be task-specific or non-task-specific.",
+                    "Normalization to peak or mean of a standardized submaximal task (isometric/ dynamic) that has similar characteristics to the task of interest.",
                   content:
-                    "Normalisation to a standardised submaximal task is not appropriate for the identification of periods of activity or inactivity based on EMG amplitude thresholds. If activation in the submaximal task differs between muscles/groups, this will influence the threshold that is set.",
+                    "Normalization to a standardized submaximal task should not be used to compare the amplitude of the EMG signal between muscles or participants. The contribution of each muscle to a submaximal task is unlikely to be equivalent between muscles (e.g., deltoid vs supraspinatus during shoulder abduction) or groups (e.g., deltoid muscle between healthy pain-free individuals and participants with shoulder replacement; or males vs females with different relative weights of their arms), thus the reference value for each muscle will not be standardized, and therefore, it is not possible to accurately interpret the comparison.",
                 },
                 {
                   title:
-                    "Normalisation to the peak or mean EMG amplitude throughout the task investigated.",
+                    "Normalization to the peak or mean EMG amplitude during the task investigated.",
                   content:
-                    "Normalisation to the peak or mean EMG amplitude is not appropriate for the identification of periods of activity or inactivity based on EMG amplitude thresholds. If the percentage of peak/ average value is used as the threshold, muscles with low amplitude will have a bias towards earlier identification of activity than a muscle that is activated to a high EMG amplitude during the task.",
+                    "Normalization to the peak or mean EMG amplitude during the task is not a valid method to compare between muscles or participants, because differences in EMG amplitude between muscles are intentionally removed by the normalization method. It is not valid for between-session comparisons.",
                 },
                 {
                   title: "Non-normalized EMG amplitude.",
@@ -441,77 +441,42 @@
           // Add other experimental contexts here if needed
         };
 
-        // Function to update methods dynamically
         function updateMethods(methods, elementId) {
           const element = document.getElementById(elementId);
           element.innerHTML = methods
             .map(
               (method, index) => `
-              <div class="accordion-item">
-                <h2 class="accordion-header" id="${elementId}Heading${index}">
-                  <button
-                    class="accordion-button collapsed"
-                    type="button"
-                    data-bs-toggle="collapse"
-                    data-bs-target="#${elementId}Collapse${index}"
-                    aria-expanded="false"
-                    aria-controls="${elementId}Collapse${index}"
-                  >
-                    ${method.title}
-                  </button>
-                </h2>
-                <div
-                  id="${elementId}Collapse${index}"
-                  class="accordion-collapse collapse"
-                  aria-labelledby="${elementId}Heading${index}"
-                  data-bs-parent="#${elementId}"
-                >
-                  <div class="accordion-body">
-                    <ul><li>${method.content}</li></ul>
-                    <a href="method.html" class="see-more-btn" data-method-index="${index}" data-element-id="${elementId}">See More</a>
-                  </div>
-                </div>
-              </div>
-            `
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="${elementId}Heading${index}">
+            <button
+              class="accordion-button collapsed"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#${elementId}Collapse${index}"
+              aria-expanded="false"
+              aria-controls="${elementId}Collapse${index}"
+            >
+              ${method.title}
+            </button>
+          </h2>
+          <div
+            id="${elementId}Collapse${index}"
+            class="accordion-collapse collapse"
+            aria-labelledby="${elementId}Heading${index}"
+            data-bs-parent="#${elementId}"
+          >
+            <div class="accordion-body">
+              <ul>
+                <li>${method.content}</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      `
             )
             .join("");
-
-          // Add event listeners for "See More" buttons
-          document.querySelectorAll(".see-more-btn").forEach((button) => {
-            button.addEventListener("click", function () {
-              const methodIndex = this.getAttribute("data-method-index");
-              const elementId = this.getAttribute("data-element-id");
-
-              // Store selected method details in localStorage, including the questions and answers
-              const selectedMethod = methods[methodIndex];
-              localStorage.setItem(
-                "selectedMethod",
-                JSON.stringify({
-                  title: selectedMethod.title,
-                  whyGoodChoice: [
-                    "MVC provides a meaningful reference – the onset/offset threshold can be interpreted with respect to the maximum capacity of that muscle in that context.",
-                    "Because the investigated task and the MVC task are the same, it is more likely that the EMG amplitude represents the true maximum muscle activation that is possible in that context, and the selected threshold will provide a valid reference value for that task.",
-                    "The threshold will be the same for all muscles investigated.",
-                    "It is likely that the maximum performance is repeatable in separate sessions.",
-                  ],
-                  caveats: [
-                    "Normalising to MVC during dynamic conditions can be challenging and sometimes shortcuts are taken, for example, this might involve performing MVC in a subset of contexts (but not all).",
-                    "Caution if a different level of activation is achieved for different muscles during the attempted MVC.",
-                    "Care must be taken in selecting the threshold of amplitude to ensure that it is meaningful.",
-                    "Some participants are potentially unable to perform a true MVC. Therefore, interpreting the results would be challenging.",
-                  ],
-                  howToDoIt: [
-                    "Conduct between 3-5 contractions that generate consistent values.",
-                    "Include adequate rest periods (1-2 minutes) that will depend on the duration of the maximal efforts.",
-                    "Ensure the participant performs a true maximum.",
-                  ],
-                })
-              );
-            });
-          });
         }
 
-        // Load the recommendation data into the page
         if (recommendation && methodsData[recommendation]) {
           document.getElementById("recommendation-text").innerText =
             recommendation;
@@ -527,7 +492,7 @@
         } else {
           console.log(
             "No matching recommendation found or no methods data for recommendation."
-          );
+          ); // Debug step
           document.getElementById("recommendation-text").innerText =
             "No recommendation found.";
         }

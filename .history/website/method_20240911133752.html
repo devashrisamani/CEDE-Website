@@ -33,16 +33,6 @@
         border: 1px solid #c3e6cb;
       }
 
-      .caution {
-        background-color: #fff3cd;
-        border: 1px solid #ffeeba;
-      }
-
-      .low-probability {
-        background-color: #f8d7da;
-        border: 1px solid #f5c6cb;
-      }
-
       .btn-container-wrapper {
         display: flex;
         justify-content: center;
@@ -152,40 +142,17 @@
           <!-- Dynamic Title will be inserted here -->
         </p>
 
-        <div id="recommendation-section" class="recommendation-section">
-          <h4 id="recommendation-heading">
-            <!-- Recommendation title will be inserted here -->
+        <div class="recommendation-section high-probability">
+          <h4>
+            <i class="fa fa-check-circle" aria-hidden="true"></i> Yes: High
+            probability that this is appropriate
           </h4>
-          <div id="">
-            <!-- Dynamic content for the method name will be inserted here -->
+          <div id="why-good-choice">
+            <!-- Dynamic content for 'Why is this method a good choice?' will be inserted here -->
           </div>
         </div>
 
         <div class="accordion" id="methodDetailsAccordion">
-          <div class="accordion-item">
-            <h2 class="accordion-header" id="headingOne">
-              <button
-                class="accordion-button collapsed"
-                type="button"
-                data-bs-toggle="collapse"
-                data-bs-target="#collapseOne"
-                aria-expanded="false"
-                aria-controls="collapseOne"
-              >
-                Why is this method a good choice?
-              </button>
-            </h2>
-            <div
-              id="collapseOne"
-              class="accordion-collapse collapse"
-              aria-labelledby="headingOne"
-              data-bs-parent="#methodDetailsAccordion"
-            >
-              <div class="accordion-body" id="why-good-choice">
-                <!-- Dynamic content for 'Why is this method a good choice?' will be inserted here -->
-              </div>
-            </div>
-          </div>
           <div class="accordion-item">
             <h2 class="accordion-header" id="headingTwo">
               <button
@@ -246,67 +213,41 @@
         </div>
       </div>
     </div>
-
     <script>
+      // Script to dynamically load method details on the methods.html page
+
       document.addEventListener("DOMContentLoaded", function () {
         const selectedMethod = JSON.parse(
           localStorage.getItem("selectedMethod")
         );
 
         if (selectedMethod) {
-          // Dynamically insert the method title
+          // Dynamically insert the method details
           document.getElementById("method-title").innerText =
             selectedMethod.title;
 
-          // Update the recommendation section based on the probability type
-          let recommendationClass = "high-probability"; // default class
-          let recommendationText =
-            "Yes: High probability that this is appropriate";
-
-          if (selectedMethod.probability === "caution") {
-            recommendationClass = "caution";
-            recommendationText =
-              "Caution: Might be appropriate, considering specific issues";
-          } else if (selectedMethod.probability === "low") {
-            recommendationClass = "low-probability";
-            recommendationText =
-              "No: High probability that this is inappropriate";
-          }
-
-          // Set the recommendation class and heading
-          const recommendationSection = document.getElementById(
-            "recommendation-section"
-          );
-          recommendationSection.classList.add(recommendationClass);
-          document.getElementById("recommendation-heading").innerText =
-            recommendationText;
-
           // Insert the 'Why is this method a good choice?' content
           document.getElementById("why-good-choice").innerHTML = `
-            <ul>
-              ${selectedMethod.whyGoodChoice
-                .map((item) => `<li>${item}</li>`)
-                .join("")}
-            </ul>
-          `;
+      <ul>
+        ${selectedMethod.whyGoodChoice
+          .map((item) => `<li>${item}</li>`)
+          .join("")}
+      </ul>
+    `;
 
           // Insert the 'What are the caveats?' content
           document.getElementById("what-caveats").innerHTML = `
-            <ul>
-              ${selectedMethod.caveats
-                .map((item) => `<li>${item}</li>`)
-                .join("")}
-            </ul>
-          `;
+      <ul>
+        ${selectedMethod.caveats.map((item) => `<li>${item}</li>`).join("")}
+      </ul>
+    `;
 
           // Insert the 'How should you do it?' content
           document.getElementById("how-do-it").innerHTML = `
-            <ul>
-              ${selectedMethod.howToDoIt
-                .map((item) => `<li>${item}</li>`)
-                .join("")}
-            </ul>
-          `;
+      <ul>
+        ${selectedMethod.howToDoIt.map((item) => `<li>${item}</li>`).join("")}
+      </ul>
+    `;
         }
       });
     </script>

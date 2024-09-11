@@ -33,16 +33,6 @@
         border: 1px solid #c3e6cb;
       }
 
-      .caution {
-        background-color: #fff3cd;
-        border: 1px solid #ffeeba;
-      }
-
-      .low-probability {
-        background-color: #f8d7da;
-        border: 1px solid #f5c6cb;
-      }
-
       .btn-container-wrapper {
         display: flex;
         justify-content: center;
@@ -152,40 +142,17 @@
           <!-- Dynamic Title will be inserted here -->
         </p>
 
-        <div id="recommendation-section" class="recommendation-section">
-          <h4 id="recommendation-heading">
-            <!-- Recommendation title will be inserted here -->
+        <div class="recommendation-section high-probability">
+          <h4>
+            <i class="fa fa-check-circle" aria-hidden="true"></i> Yes: High
+            probability that this is appropriate
           </h4>
-          <div id="">
-            <!-- Dynamic content for the method name will be inserted here -->
+          <div id="why-good-choice">
+            <!-- Dynamic content for 'Why is this method a good choice?' will be inserted here -->
           </div>
         </div>
 
         <div class="accordion" id="methodDetailsAccordion">
-          <div class="accordion-item">
-            <h2 class="accordion-header" id="headingOne">
-              <button
-                class="accordion-button collapsed"
-                type="button"
-                data-bs-toggle="collapse"
-                data-bs-target="#collapseOne"
-                aria-expanded="false"
-                aria-controls="collapseOne"
-              >
-                Why is this method a good choice?
-              </button>
-            </h2>
-            <div
-              id="collapseOne"
-              class="accordion-collapse collapse"
-              aria-labelledby="headingOne"
-              data-bs-parent="#methodDetailsAccordion"
-            >
-              <div class="accordion-body" id="why-good-choice">
-                <!-- Dynamic content for 'Why is this method a good choice?' will be inserted here -->
-              </div>
-            </div>
-          </div>
           <div class="accordion-item">
             <h2 class="accordion-header" id="headingTwo">
               <button
@@ -246,67 +213,45 @@
         </div>
       </div>
     </div>
-
     <script>
+      // Script to dynamically load method details on the methods.html page
+
       document.addEventListener("DOMContentLoaded", function () {
         const selectedMethod = JSON.parse(
           localStorage.getItem("selectedMethod")
         );
 
         if (selectedMethod) {
-          // Dynamically insert the method title
+          // Set the method title
           document.getElementById("method-title").innerText =
             selectedMethod.title;
 
-          // Update the recommendation section based on the probability type
-          let recommendationClass = "high-probability"; // default class
-          let recommendationText =
-            "Yes: High probability that this is appropriate";
-
-          if (selectedMethod.probability === "caution") {
-            recommendationClass = "caution";
-            recommendationText =
-              "Caution: Might be appropriate, considering specific issues";
-          } else if (selectedMethod.probability === "low") {
-            recommendationClass = "low-probability";
-            recommendationText =
-              "No: High probability that this is inappropriate";
-          }
-
-          // Set the recommendation class and heading
-          const recommendationSection = document.getElementById(
-            "recommendation-section"
-          );
-          recommendationSection.classList.add(recommendationClass);
-          document.getElementById("recommendation-heading").innerText =
-            recommendationText;
-
-          // Insert the 'Why is this method a good choice?' content
+          // Populate the "Why is this method a good choice?" section
           document.getElementById("why-good-choice").innerHTML = `
-            <ul>
-              ${selectedMethod.whyGoodChoice
-                .map((item) => `<li>${item}</li>`)
-                .join("")}
-            </ul>
-          `;
+      <ul>
+        <li>MVC provides a meaningful reference – the onset/offset threshold can be interpreted with respect to the maximum capacity of that muscle in that context.</li>
+        <li>Because the investigated task and the MVC task are the same, it is more likely that the EMG amplitude represents the true maximum muscle activation that is possible in that context, and the selected threshold will provide a valid reference value for that task.</li>
+        <li>The threshold will be the same for all muscles investigated.</li>
+        <li>It is likely that the maximum performance is repeatable in separate sessions.</li>
+      </ul>`;
 
-          // Insert the 'What are the caveats?' content
+          // Populate the "What are the caveats?" section
           document.getElementById("what-caveats").innerHTML = `
-            <ul>
-              ${selectedMethod.caveats
-                .map((item) => `<li>${item}</li>`)
-                .join("")}
-            </ul>
-          `;
+      <ul>
+        <li>Normalising to MVC during dynamic conditions can be challenging and sometimes shortcuts are taken, for example, this might involve performing MVC in a subset of contexts (but not all). If a subset of tasks is used, it is important to identify this as a potential limitation. Caution if a different level of activation is achieved for different muscles during the attempted MVC. The period of activity of muscles not activated maximally in the MVC task can be overestimated because the threshold would be related to a low amplitude value.</li>
+        <li>Depending on how the threshold is set, the period of muscle(s) activity can be overestimated if the threshold is too low or underestimated if the threshold is too high. Setting the threshold depends on the experimental question.</li>
+        <li>Care must be taken in selecting the threshold of amplitude to ensure that is meaningful. In other words, there has to be a physiological justification for the amplitude threshold chosen.</li>
+      </ul>`;
 
-          // Insert the 'How should you do it?' content
+          // Populate the "How should you do it?" section
           document.getElementById("how-do-it").innerHTML = `
-            <ul>
-              ${selectedMethod.howToDoIt
-                .map((item) => `<li>${item}</li>`)
-                .join("")}
-            </ul>
-          `;
+      <ul>
+        <li>Conduct between 3-5 contractions that generate consistent values.</li>
+        <li>Include adequate rest periods (1-2 minutes) that will depend on the duration of the maximal efforts.</li>
+        <li>Match the task as closely as possible.</li>
+        <li>Ensure the participant performs a true maximum (e.g., encourage them strongly, consider twitch interpolation [hyperlink with explanation of concept] when possible).</li>
+        <li>Calculate the amplitude of the peak [suggest taking the average over a specified time period (e.g., 100-300 ms)] of the EMG trace across repetitions.</li>
+      </ul>`;
         }
       });
     </script>
