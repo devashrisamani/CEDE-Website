@@ -397,20 +397,7 @@
             },
           "Experimental context 5: Identification of periods of activity and inactivity using thresholds based on signal amplitude for comparison between muscles/groups.":
             {
-              high: [
-                {
-                  title:
-                    "Normalisation to the maximum voluntary contraction (MVC) in the same task/context as the task of interest (with matched contraction type*, muscle length/joint angle, and/or velocity) *isometric; concentric; eccentric",
-                  content:
-                    'Normalisation to the maximum voluntary contraction (MVC) is appropriate when identifying periods of activity or inactivity based on EMG amplitude thresholds. The physiological meaning of the threshold (i.e., percentage of MVC) for onset of EMG will be consistent between muscles and participant groups as long as a true maximum contraction is performed. Caution if a different level of activation is achieved for different muscles during the attempted MVC. This is very difficult to detect but would normally require superimposed twitch interpolation [hyperlink with explanation of concept]. This would be clear if the normalised amplitude exceeds 100%. <a href="method.html">See More</a>',
-                },
-                {
-                  title:
-                    "Normalisation to a standardised isometric MVC when it is not possible to match the outcome contraction (e.g., multiple tasks or muscles investigated).",
-                  content:
-                    "Although normalisation to a standardised isometric MVC is appropriate when identifying periods of activity or inactivity based on EMG amplitude thresholds, this method is less ideal than Normalisation to the maximum voluntary contraction (MVC) in the same task/context as the task of interest [hyperlink to method 5.1], because it DOES NOT control for physiological and anatomical differences (e.g., contraction type, contraction type, speed, muscle length or relative position between electrodes and muscle fibres, muscle architecture [e.g., pennation angle, fibres curvature],  etc.) between the task of interested and the MVC task. The physiological meaning of the threshold (i.e., percentage of MVC) for onset identification of the EMG signal will be consistent between muscles and participant groups as long as a true maximum contraction is performed. Caution if different levels of activation are achieved for different muscles during the attempted MVC.",
-                },
-              ],
+              high: [],
               caution: [
                 {
                   title: "Non-normalised EMG amplitude.",
@@ -436,12 +423,30 @@
                   content:
                     "Non-normalized EMG amplitude should not be used to compare the amplitude of the EMG signal between muscles or participants, because electrode and anatomical issues cannot be perfectly matched or controlled. For example, orientation relative to the muscle fibers, anatomical differences (such as the thickness of subcutaneous tissue) or muscle architectural characteristics (such as fiber types, or fiber cross-sectional area) might lead to systematic biases when comparing muscle amplitude between muscles. This method should only be considered to increase the confidence of the interpretation of another method.",
                 },
+                {
+                  title: "Non-normalized EMG amplitude.",
+                  content:
+                    "Non-normalized EMG amplitude should not be used to compare the amplitude of the EMG signal between muscles or participants, because electrode and anatomical issues cannot be perfectly matched or controlled. For example, orientation relative to the muscle fibers, anatomical differences (such as the thickness of subcutaneous tissue) or muscle architectural characteristics (such as fiber types, or fiber cross-sectional area) might lead to systematic biases when comparing muscle amplitude between muscles. This method should only be considered to increase the confidence of the interpretation of another method.",
+                },
               ],
             },
 
           "Experimental context 6: Identification of pattern* of activation from averaged data for comparison between muscles/groups/trials.":
             {
-              high: [],
+              high: [
+                {
+                  title:
+                    "Normalisation to the maximum voluntary contraction (MVC) in the same task/context as the task of interest (with matched contraction type*, muscle length/joint angle, and/or velocity) *isometric; concentric; eccentric",
+                  content:
+                    'Normalisation to the maximum voluntary contraction (MVC) is appropriate when identifying periods of activity or inactivity based on EMG amplitude thresholds. The physiological meaning of the threshold (i.e., percentage of MVC) for onset of EMG will be consistent between muscles and participant groups as long as a true maximum contraction is performed. Caution if a different level of activation is achieved for different muscles during the attempted MVC. This is very difficult to detect but would normally require superimposed twitch interpolation [hyperlink with explanation of concept]. This would be clear if the normalised amplitude exceeds 100%. <a href="method.html">See More</a>',
+                },
+                {
+                  title:
+                    "Normalisation to a standardised isometric MVC when it is not possible to match the outcome contraction (e.g., multiple tasks or muscles investigated).",
+                  content:
+                    "Although normalisation to a standardised isometric MVC is appropriate when identifying periods of activity or inactivity based on EMG amplitude thresholds, this method is less ideal than Normalisation to the maximum voluntary contraction (MVC) in the same task/context as the task of interest [hyperlink to method 5.1], because it DOES NOT control for physiological and anatomical differences (e.g., contraction type, contraction type, speed, muscle length or relative position between electrodes and muscle fibres, muscle architecture [e.g., pennation angle, fibres curvature],  etc.) between the task of interested and the MVC task. The physiological meaning of the threshold (i.e., percentage of MVC) for onset identification of the EMG signal will be consistent between muscles and participant groups as long as a true maximum contraction is performed. Caution if different levels of activation are achieved for different muscles during the attempted MVC.",
+                },
+              ],
               caution: [
                 {
                   title:
@@ -459,7 +464,7 @@
                   title:
                     "Normalisation to the peak or mean EMG amplitude throughout the task investigated.",
                   content:
-                    "Although Normalisation to the peak or mean EMG amplitude throughout the task investigated allows the identification of patterns of activation from averaged data, this method requires consideration. Normalisation to peak results in equal weighting of each muscle/participant to the average. One limitation of this approach is that EMG signals that are very low in amplitude (e.g. due to a low level of muscle activation or poor quality of EMG recordings), if normalised to their peak value during the task, will incorrectly appear to be very active throughout. ",
+                    "Although Normalisation to the peak or mean EMG amplitude throughout the task investigated allows the identification of patterns of activation from averaged data, this method requires consideration. Normalisation to peak results in equal weighting of each muscle/participant to the average. One limitation of this approach is that EMG signals that are very low in amplitude (e.g. due to a low level of muscle activation or poor quality of EMG recordings), if normalised to their peak value during the task, will incorrectly appear to be very active throughout.",
                 },
               ],
               low: [
@@ -473,11 +478,6 @@
                   title: "Non-normalised EMG amplitude.",
                   content:
                     "Non-normalised EMG amplitude is not appropriate for the identification of patterns of activation from averaged data. When generating an ensemble average across participants the use of non-normalised data would bias the result to the muscle with the largest EMG amplitude. This bias may be caused by issues unrelated to the relative EMG amplitude because this method DOES NOT control for physiological and anatomical issues (e.g., subcutaneous fat, muscle architecture [which changes with contraction], position of electrode relative to the muscle [particularly relevant for tasks when the muscle is moving], etc.).",
-                },
-                {
-                  title: "Normalized to the maximal M-wave amplitude.",
-                  content:
-                    "Generally, normalization to the maximal M-wave amplitude is only used for normalization of evoked potentials (i.e., motor evoked potentials (MEP) or Hoffman reflex (H-reflex) / <alternative: hyperlink on definitions>).",
                 },
               ],
             },
