@@ -1,22 +1,25 @@
-// Function for the collaborator toggle on the index page
-function showSection(sectionId) {
-  // Hide all sections
-  document.getElementById("leads").classList.add("d-none");
-  document.getElementById("members").classList.add("d-none");
-  document.getElementById("collaborators").classList.add("d-none");
+<script>
+  function showSection(sectionId) {
+    // Hide all sections
+    document.getElementById('leads').classList.add('d-none');
+    document.getElementById('members').classList.add('d-none');
+    document.getElementById('collaborators').classList.add('d-none');
+    
+    // Show the selected section
+    document.getElementById(sectionId).classList.remove('d-none');
+    
+    // Remove 'active' class from all buttons
+    var buttons = document.querySelectorAll('.btn-toggle');
+    buttons.forEach(function (button) {
+      button.classList.remove('active');
+    });
+    
+    // Add 'active' class to the clicked button
+    event.target.classList.add('active');
+  }
+</script>
 
-  // Show the selected section
-  document.getElementById(sectionId).classList.remove("d-none");
 
-  // Remove 'active' class from all buttons
-  var buttons = document.querySelectorAll(".btn-toggle");
-  buttons.forEach(function (button) {
-    button.classList.remove("active");
-  });
-
-  // Add 'active' class to the clicked button
-  event.target.classList.add("active");
-}
 
 // import "constants.js";
 let rules = []; // Ensure this is defined globally

@@ -229,9 +229,20 @@
 
     <script>
       // This function will be called when user selects an option
-      function selectOption(selectedOption) {
+      function selectOption(element) {
+        const name = element.name;
+
+        // Remove 'selected' class from all options in this question
+        document.querySelectorAll(`input[name="${name}"]`).forEach((input) => {
+          input.closest(".option").classList.remove("selected");
+        });
+
+        // Add 'selected' class to the clicked option
+        element.closest(".option").classList.add("selected");
+
+        // Enable the submit button once an option is selected
         const submitButton = document.getElementById("submit-button");
-        submitButton.disabled = false; // Enable the submit button once an option is selected
+        submitButton.disabled = false;
       }
 
       // Function to get recommendation based on user selection

@@ -1,4 +1,3 @@
-// Function for the collaborator toggle on the index page
 function showSection(sectionId) {
   // Hide all sections
   document.getElementById("leads").classList.add("d-none");
