@@ -1,0 +1,94 @@
+{
+  "recommendations": {
+    "Experimental context 1": {
+      "high": [
+        {
+          "name": "Normalization to the maximum voluntary contraction (MVC)",
+          "description": "Normalizing to maximum voluntary contraction (MVC) provides a relative value useful to compare the magnitude of muscle activity in different tasks or conditions. This represents the activity as a proportion of the maximum capacity of the muscle.",
+          "how_to": [
+            "Conduct between 3-5 MVC that generate consistent values.",
+            "Include adequate rest periods (1-2 minutes) based on the duration of the maximal efforts.",
+            "The task executed during MVC must resemble as closely as possible to the task of interest."
+          ],
+          "caveats": [
+            "If the tasks or conditions are different, each needs to be normalized separately.",
+            "Normalizing to MVC during dynamic conditions can be challenging.",
+            "Some participants may not be able to perform a true MVC."
+          ]
+        },
+        {
+          "name": "Normalization to a standardized isometric maximum voluntary contraction (MVC)",
+          "description": "Normalization to a standardized isometric MVC is a relative value used when it is not possible to match all aspects of the task.",
+          "how_to": [
+            "Conduct between 3-5 contractions that generate consistent values.",
+            "Include adequate rest periods (1-2 minutes).",
+            "Ensure the participant performs a true maximum."
+          ],
+          "caveats": [
+            "This method is less accurate than an MVC that matches the task of interest."
+          ]
+        }
+      ],
+      "caution": [
+        {
+          "name": "Normalization to a standardized submaximal task (isometric/ dynamic)",
+          "description": "Normalizing to a standardized submaximal task provides an alternative when MVC cannot be performed.",
+          "how_to": [
+            "Conduct between 3-5 contractions that generate consistent values.",
+            "Include adequate rest periods based on effort duration."
+          ],
+          "caveats": [
+            "Does not allow for absolute amplitude comparisons between participants.",
+            "Within-session differences can occur, so use another method for normalization."
+          ]
+        }
+      ],
+      "low": [
+        {
+          "name": "Normalization to the peak or mean EMG amplitude during the task investigated",
+          "description": "This method is used for comparisons within a single task across conditions but should not be used for cross-task comparisons."
+        },
+        {
+          "name": "Non-normalized EMG amplitude",
+          "description": "EMG amplitude expressed in absolute units, acceptable for within-person comparisons without removing electrodes."
+        },
+        {
+          "name": "Normalized to the maximal M-wave amplitude",
+          "description": "This method is mainly used for normalization of evoked potentials, but is not recommended for general muscle activity comparisons."
+        }
+      ]
+    },
+    "Experimental context 2": {
+      "high": [
+        {
+          "name": "Normalization to the maximum voluntary contraction (MVC)",
+          "description": "Normalizing to maximum voluntary contraction (MVC) provides a relative value useful to compare the magnitude of muscle activity in different tasks or conditions."
+        },
+        {
+          "name": "Normalization to a standardized isometric maximum voluntary contraction (MVC)",
+          "description": "Normalization to a standardized isometric MVC is a relative value used when it is not possible to match all aspects of the task."
+        }
+      ],
+      "caution": [
+        {
+          "name": "Normalization to a standardized submaximal task (isometric/ dynamic)",
+          "description": "Normalizing to a standardized submaximal task provides an alternative when MVC cannot be performed."
+        }
+      ],
+      "low": [
+        {
+          "name": "Normalization to the peak or mean EMG amplitude during the task investigated",
+          "description": "This method is used for comparisons within a single task across conditions but should not be used for cross-task comparisons."
+        },
+        {
+          "name": "Non-normalized EMG amplitude",
+          "description": "EMG amplitude expressed in absolute units, acceptable for within-person comparisons without removing electrodes."
+        },
+        {
+          "name": "Normalized to the maximal M-wave amplitude",
+          "description": "This method is mainly used for normalization of evoked potentials."
+        }
+      ]
+    }
+  }
+}
