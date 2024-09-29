@@ -61,7 +61,7 @@ function handleSynergies() {
   // Set the context in localStorage
   localStorage.setItem(
     "recommendation",
-    "Experimental context 4. Identification of muscle synergies (also called motor modules/ primitives) using methods such as non-negative matrix factorization"
+    "Experimental context 4: Identification of muscle synergies (also called motor modules/ primitives) using methods such as non-negative matrix factorization"
   );
 
   // Redirect to the recommendation page

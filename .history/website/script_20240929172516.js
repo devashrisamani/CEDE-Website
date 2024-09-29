@@ -42,7 +42,32 @@ const valueMapping = {
 };
 
 // Function to handle option selection
+// function selectOption(element) {
+//   const name = element.name;
+//   document.querySelectorAll(`input[name="${name}"]`).forEach((input) => {
+//     input.closest(".option").classList.remove("selected");
+//   });
+
+//   element.closest(".option").classList.add("selected");
+
+//   // Check if all questions are answered to enable the submit button
+//   const allAnswered =
+//     document.querySelectorAll('input[type="radio"]:checked').length === 4;
+//   document.getElementById("submit-button").disabled = !allAnswered;
+// }
+
 function selectOption(element) {
+  // Check if the selected option is "Synergies"
+  if (element.value === "synergies") {
+    // Store the context 4 information in localStorage
+    localStorage.setItem("selectedContext", "Experimental context 4");
+
+    // Redirect to the recommendation page
+    window.location.href = "recommendation.html";
+    return; // Exit the function since we don't need the rest of the logic for "Synergies"
+  }
+
+  // Existing logic for other options
   const name = element.name;
   document.querySelectorAll(`input[name="${name}"]`).forEach((input) => {
     input.closest(".option").classList.remove("selected");
@@ -55,45 +80,6 @@ function selectOption(element) {
     document.querySelectorAll('input[type="radio"]:checked').length === 4;
   document.getElementById("submit-button").disabled = !allAnswered;
 }
-
-// Function to handle the "Synergies" button
-function handleSynergies() {
-  // Set the context in localStorage
-  localStorage.setItem(
-    "recommendation",
-    "Experimental context 4. Identification of muscle synergies (also called motor modules/ primitives) using methods such as non-negative matrix factorization"
-  );
-
-  // Redirect to the recommendation page
-  window.location.href = "recommendation.html";
-}
-
-// function selectOption(element) {
-//   const inputElement = element.querySelector('input[type="radio"]');
-
-//   if (inputElement) {
-//     inputElement.checked = true; // Check the radio button
-//     const name = inputElement.name;
-
-//     // Remove 'selected' class from all options with the same name
-//     document.querySelectorAll(`input[name="${name}"]`).forEach((input) => {
-//       input.closest(".option").classList.remove("selected");
-//     });
-
-//     // Add 'selected' class to the clicked option
-//     element.classList.add("selected");
-
-//     // Check if the selected option is "Synergies" and redirect to the recommendation page
-//     if (inputElement.value === "synergies") {
-//       localStorage.setItem(
-//         "recommendation",
-//         "Experimental context 4. Identification of muscle synergies (also called motor modules/ primitives) using methods such as non-negative matrix factorization"
-//       );
-//       window.location.href = "recommendation.html"; // Redirect to the recommendation page
-//     }
-
-//   }
-// }
 
 // Function to go back
 function goBack() {

@@ -41,7 +41,7 @@ const valueMapping = {
     "No (Change the color of #.1 and #.2 methods to grey and not allow them to click to it)",
 };
 
-// Function to handle option selection
+Function to handle option selection
 function selectOption(element) {
   const name = element.name;
   document.querySelectorAll(`input[name="${name}"]`).forEach((input) => {
@@ -54,18 +54,6 @@ function selectOption(element) {
   const allAnswered =
     document.querySelectorAll('input[type="radio"]:checked').length === 4;
   document.getElementById("submit-button").disabled = !allAnswered;
-}
-
-// Function to handle the "Synergies" button
-function handleSynergies() {
-  // Set the context in localStorage
-  localStorage.setItem(
-    "recommendation",
-    "Experimental context 4. Identification of muscle synergies (also called motor modules/ primitives) using methods such as non-negative matrix factorization"
-  );
-
-  // Redirect to the recommendation page
-  window.location.href = "recommendation.html";
 }
 
 // function selectOption(element) {

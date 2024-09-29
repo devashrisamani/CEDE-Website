@@ -412,25 +412,24 @@
                   content:
                     "Normalisation to the maximum voluntary contraction (MVC) is appropriate for the extraction of muscle synergies but requires some considerations. Synergy extraction would be biased to describe the muscles that are activated at the higher level. As such, it may affect the number of extracted muscle synergies. Ideally, the MVC will be optimized for each muscle considered in the investigated task (i.e., separate MVCs for each muscle, but this may only be possible for isometric contractions). This method is less ideal than “normalisation to the MVC in the same task/context as the task of interest” [hyperlink to method 4.1] because it DOES NOT control for physiological and anatomical issues (e.g., contraction type, muscle architecture, electrode placement, etc.).",
                 },
-
-                {
-                  title:
-                    "Normalisation to the peak or mean EMG amplitude throughout the task investigated. ",
-                  content:
-                    "Although normalisation to the peak or mean EMG amplitude allows the extraction of muscle synergies, this method requires considerations. When evaluating the muscle synergies, because the amplitude of every muscle would be expressed as a percentage of their peak/mean value throughout the task of interest, the muscle synergies extraction will not be biased toward the muscle(s) with the highest activity. Normalising muscles that have sustained low-level activation or no activity across the task to their task peak/mean, is likely to give unwarranted weighting/ “meaning” to that muscle in the analysis. ",
-                },
               ],
               low: [
                 {
                   title:
                     "Normalisation to a standardised submaximal task (isometric/ dynamic) that can be task-specific or non-task-specific.",
                   content:
-                    "Normalisation to a standardised submaximal task is not appropriate for the extraction of muscle synergies. The submaximal task is unlikely to be equivalent between muscles (different muscles can be active at different MVC%) and between participants (the same muscle can be more active in one person than another). This could result in extracting synergies with different temporal profiles and different weights for each participant, preventing the finding of common patterns.",
+                    "Normalization to a standardized submaximal task should not be used to compare the amplitude of the EMG signal between muscles or participants. The contribution of each muscle to a submaximal task is unlikely to be equivalent between muscles (e.g., deltoid vs supraspinatus during shoulder abduction) or groups (e.g., deltoid muscle between healthy pain-free individuals and participants with shoulder replacement; or males vs females with different relative weights of their arms), thus the reference value for each muscle will not be standardized, and therefore, it is not possible to accurately interpret the comparison.",
                 },
                 {
-                  title: "Non-normalised EMG amplitude.",
+                  title:
+                    "Normalization to the peak or mean EMG amplitude during the task investigated.",
                   content:
-                    "Non-normalised EMG amplitude is not appropriate for the extraction of muscle synergies. The synergy extraction would be biased to describe the muscles which exhibit a high EMG amplitude for possible non-relevant reasons (e.g., subcutaneous fat, muscle architecture, electrode location). This would affect the number of extracted muscle synergies and complicate the interpretation of the results.",
+                    "Normalization to the peak or mean EMG amplitude during the task is not a valid method to compare between muscles or participants, because differences in EMG amplitude between muscles are intentionally removed by the normalization method. It is not valid for between-session comparisons.",
+                },
+                {
+                  title: "Non-normalized EMG amplitude.",
+                  content:
+                    "Non-normalized EMG amplitude should not be used to compare the amplitude of the EMG signal between muscles or participants, because electrode and anatomical issues cannot be perfectly matched or controlled. For example, orientation relative to the muscle fibers, anatomical differences (such as the thickness of subcutaneous tissue) or muscle architectural characteristics (such as fiber types, or fiber cross-sectional area) might lead to systematic biases when comparing muscle amplitude between muscles. This method should only be considered to increase the confidence of the interpretation of another method.",
                 },
               ],
             },

@@ -56,18 +56,6 @@ function selectOption(element) {
   document.getElementById("submit-button").disabled = !allAnswered;
 }
 
-// Function to handle the "Synergies" button
-function handleSynergies() {
-  // Set the context in localStorage
-  localStorage.setItem(
-    "recommendation",
-    "Experimental context 4. Identification of muscle synergies (also called motor modules/ primitives) using methods such as non-negative matrix factorization"
-  );
-
-  // Redirect to the recommendation page
-  window.location.href = "recommendation.html";
-}
-
 // function selectOption(element) {
 //   const inputElement = element.querySelector('input[type="radio"]');
 
